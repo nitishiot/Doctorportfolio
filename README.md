@@ -22,6 +22,11 @@ python3 -m http.server 8000
 # open http://localhost:8000
 ```
 
+## After editing CSS or JS
+
+Run `python3 scripts/cache-bust.py`. It stamps the stylesheet and script links in `index.html`
+with a content hash (`styles.css?v=…`) so visitors never get a new page with old, cached styles.
+
 ## Common edits
 
 | What                | Where |
