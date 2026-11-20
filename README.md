@@ -50,7 +50,7 @@ Deliberately not used: Google's AI Overview text, Justdial's category, and Mappl
 
 Still to confirm with the doctor:
 
-- Which phone numbers to publish. The site shows only 81097 70140; the business card has 97520 20327 and Mappls lists 94253 54374
+- Phone numbers 97520 20327 (business card) and 94253 54374 (Mappls) are shown with a "To be confirmed" label. Once confirmed, delete the `<span class="tbc">` next to each number in `index.html` (two in the location section, two in the footer). 81097 70140 is confirmed by the clinic's signboards
 - MBBS college (a directory lists Index Medical College, Indore), MD college, and Junior Resident / Medical Officer posts
 - Whether he offers online consultation (a directory mentions Medisage)
 - The domain on his business card, `dr.sovranrai.com`, doesn't load. Register or recover `sovranrai.com`, then add a `CNAME` file here and a DNS record `dr` → `nitishiot.github.io`

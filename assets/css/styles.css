@@ -338,6 +338,15 @@ html[data-lang="hi"] .award .award__tag { letter-spacing: 0; font-size: .82rem; 
 .note a { color: #fff; font-weight: 600; }
 .addr { font-style: normal; display: flex; flex-direction: column; gap: 2px; margin-bottom: 24px; }
 .addr strong { color: #fff; }
+.phones { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 8px; }
+.phones li { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; }
+.phones a { display: inline-flex; align-items: center; gap: 8px; color: #fff; font-weight: 600; text-decoration: none; white-space: nowrap; }
+.phones a:hover { text-decoration: underline; }
+.phones a .i { color: #8fe0d6; width: 16px; height: 16px; }
+.phones__note { font-size: .88rem; color: #b7c5e0; }
+.tbc { display: inline-block; font-size: .7rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; padding: 1px 8px; border-radius: 999px; background: #f5d58a; color: #5c4203; white-space: nowrap; vertical-align: middle; }
+html[data-lang="hi"] .tbc { letter-spacing: 0; font-size: .78rem; text-transform: none; }
+.footer__muted { color: #8a9bbd; font-size: .85rem; }
 .addr__email { display: inline-flex; align-items: center; gap: 8px; margin-top: 8px; color: #fff; font-weight: 600; text-decoration: none; word-break: break-all; }
 .addr__email:hover { text-decoration: underline; }
 .addr__email .i { color: #8fe0d6; }
