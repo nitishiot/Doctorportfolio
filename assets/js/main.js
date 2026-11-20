@@ -187,6 +187,7 @@
     if (toggle) toggle.setAttribute("aria-label", UI[lang].langLabel);
     storageSet("lang", lang);
     updateStatus();
+    renderReviews();
   }
 
   document.getElementById("langToggle").addEventListener("click", function () {
@@ -278,43 +279,78 @@
   setInterval(updateStatus, 60000);
 
   /* ---------------- Reviews ---------------- */
+  var REV_UI = {
+    en: { reviews: "reviews on Google", translated: "Translated", outOf: "out of 5 stars" },
+    hi: { reviews: "Google समीक्षाएँ", translated: "अनूदित", outOf: "5 में से स्टार" }
+  };
+
+  function starString(n) {
+    var full = Math.round(n);
+    return "★★★★★".slice(0, full) + "☆☆☆☆☆".slice(0, 5 - full);
+  }
+
+  function el(tag, cls, text) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text != null) e.textContent = text;
+    return e;
+  }
+
+  function applyProfileLinks() {
+    var url = window.GOOGLE_PROFILE_URL;
+    if (!url) return;
+    document.querySelectorAll("[data-google-link]").forEach(function (a) { a.href = url; });
+  }
+
   function renderReviews() {
+    var t = REV_UI[lang];
+
+    // Summary badge (overall Google rating).
+    var summary = document.getElementById("reviewSummary");
+    var s = window.REVIEW_SUMMARY || {};
+    if (summary) {
+      summary.textContent = "";
+      var rating = Number(s.rating);
+      if (rating > 0 && rating <= 5) {
+        summary.appendChild(el("span", "rating__score", rating.toFixed(1)));
+        var stars = el("span", "rating__stars", starString(rating));
+        stars.setAttribute("aria-label", rating.toFixed(1) + " " + t.outOf);
+        summary.appendChild(stars);
+        if (s.count) summary.appendChild(el("span", "rating__count", s.count + " " + t.reviews));
+        summary.hidden = false;
+      } else {
+        summary.hidden = true;
+      }
+    }
+
+    // Individual reviews.
     var list = document.getElementById("reviewList");
+    if (!list) return;
+    list.textContent = "";
     var data = (window.REVIEWS || []).filter(function (r) { return r && r.name && r.text; });
-    if (!list || !data.length) return;
     data.forEach(function (r) {
-      var rating = Math.max(1, Math.min(5, Math.round(r.rating || 5)));
-      var card = document.createElement("article");
-      card.className = "review";
+      var stars = Math.max(1, Math.min(5, Math.round(r.rating || 5)));
+      var useTranslation = r.translation && r.lang && r.lang !== lang;
+      var card = el("article", "review");
+      if (!useTranslation && r.lang) card.lang = r.lang;
 
-      var stars = document.createElement("div");
-      stars.className = "review__stars";
-      stars.setAttribute("aria-label", rating + " out of 5 stars");
-      stars.textContent = "★★★★★".slice(0, rating) + "☆☆☆☆☆".slice(0, 5 - rating);
+      var starEl = el("div", "review__stars", starString(stars));
+      starEl.setAttribute("aria-label", stars + " " + t.outOf);
+      card.appendChild(starEl);
 
-      var text = document.createElement("p");
-      text.className = "review__text";
-      text.textContent = "“" + r.text + "”";
+      card.appendChild(el("p", "review__text", "“" + (useTranslation ? r.translation : r.text) + "”"));
 
-      var meta = document.createElement("div");
-      meta.className = "review__meta";
-      var av = document.createElement("span");
-      av.className = "review__avatar";
+      var meta = el("div", "review__meta");
+      var av = el("span", "review__avatar", r.name.trim().charAt(0).toUpperCase());
       av.setAttribute("aria-hidden", "true");
-      av.textContent = r.name.trim().charAt(0).toUpperCase();
-      var who = document.createElement("span");
-      var name = document.createElement("span");
-      name.className = "review__name";
-      name.textContent = r.name;
-      who.appendChild(name);
-      var extra = [r.source, r.date].filter(Boolean).join(" · ");
-      if (extra) who.appendChild(document.createTextNode(" · " + extra));
+      var who = el("span");
+      who.appendChild(el("span", "review__name", r.name));
+      var extra = ["Google", r.date, useTranslation ? t.translated : ""].filter(Boolean).join(" · ");
+      who.appendChild(document.createTextNode(" · " + extra));
       meta.appendChild(av);
       meta.appendChild(who);
-
-      card.appendChild(stars);
-      card.appendChild(text);
       card.appendChild(meta);
+
       list.appendChild(card);
     });
   }
@@ -331,6 +367,6 @@
   /* ---------------- Init ---------------- */
   var yr = document.getElementById("year");
   if (yr) yr.textContent = String(new Date().getFullYear());
-  renderReviews();
+  applyProfileLinks();
   setLang(storageGet("lang") || "en");
 })();

@@ -26,7 +26,9 @@ python3 -m http.server 8000
 
 | What                | Where |
 |---------------------|-------|
-| Add patient reviews | `assets/js/reviews.js` — paste genuine reviews from the Google profile |
+| Add patient reviews | `assets/js/reviews.js` — paste reviews word for word from the Google profile; optional `translation` shows in the other language, labelled "Translated" |
+| Google rating badge | `REVIEW_SUMMARY` in `assets/js/reviews.js` (rating and review count as shown on Google) |
+| Google profile link | `GOOGLE_PROFILE_URL` in `assets/js/reviews.js` (used by the review and directions buttons) |
 | Add doctor's photo  | Save as `assets/img/doctor.jpg`, then follow the comment above `.portrait` in `index.html` |
 | Change timings      | Hours table in `index.html` (`#visit`), `SESSIONS` in `assets/js/main.js`, top bar text, and the JSON-LD block |
 | Hindi text          | `HI` object at the top of `assets/js/main.js` (keys match `data-i18n` attributes) |
