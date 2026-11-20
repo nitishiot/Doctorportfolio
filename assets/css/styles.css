@@ -284,6 +284,20 @@ html[data-lang="hi"] .timeline__tag { letter-spacing: 0; font-size: .8rem; }
 .award figcaption { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 4px; }
 .award strong { color: var(--blue-900); }
 .award span { font-size: .9rem; color: var(--ink-2); }
+.award--feature { grid-column: 1 / -1; flex-direction: row; align-items: center; }
+.award--feature img { width: 240px; flex: none; aspect-ratio: auto; height: auto; object-fit: contain; background: var(--bg-2); padding: 14px; }
+.award--feature figcaption { padding: 24px 28px; gap: 8px; }
+.award--feature strong { font: 600 1.45rem/1.2 var(--font-serif); }
+html[data-lang="hi"] .award--feature strong { font-family: var(--font-hi-serif); font-weight: 700; }
+.award--feature span { font-size: .98rem; }
+.award .award__tag { align-self: flex-start; font-size: .72rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 2px 10px; border-radius: 999px; background: var(--gold-100); color: #7a5806; }
+html[data-lang="hi"] .award .award__tag { letter-spacing: 0; font-size: .82rem; }
+.award .award__org { color: var(--blue-700); font-weight: 600; font-size: .9rem; }
+@media (max-width: 640px) {
+  .award--feature { flex-direction: column; align-items: stretch; }
+  .award--feature img { width: 100%; max-height: 420px; }
+  .award--feature figcaption { padding: 18px; }
+}
 
 /* ---------- Reviews ---------- */
 .rating { display: inline-flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: -12px 0 28px; padding: 10px 18px; background: #fff; border: 1px solid var(--line); border-radius: 999px; box-shadow: var(--shadow-s); }
@@ -300,8 +314,8 @@ html[data-lang="hi"] .timeline__tag { letter-spacing: 0; font-size: .8rem; }
 .review__meta { display: flex; align-items: center; gap: 10px; font-size: .88rem; color: var(--ink-3); }
 .review__avatar { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: var(--blue-100); color: var(--blue-700); font-weight: 700; }
 .review__name { color: var(--ink); font-weight: 600; }
-.reviews__cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
-.reviews:empty + .reviews__cta { margin-top: 0; }
+.reviews__asof { font-size: .82rem; color: var(--ink-3); margin: 16px 0 0; }
+.reviews__cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
 
 /* ---------- Visit ---------- */
 .visit { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(28px, 5vw, 56px); align-items: stretch; }
@@ -324,19 +338,20 @@ html[data-lang="hi"] .timeline__tag { letter-spacing: 0; font-size: .8rem; }
 .note a { color: #fff; font-weight: 600; }
 .addr { font-style: normal; display: flex; flex-direction: column; gap: 2px; margin-bottom: 24px; }
 .addr strong { color: #fff; }
+.addr__email { display: inline-flex; align-items: center; gap: 8px; margin-top: 8px; color: #fff; font-weight: 600; text-decoration: none; word-break: break-all; }
+.addr__email:hover { text-decoration: underline; }
+.addr__email .i { color: #8fe0d6; }
 .visit__actions { display: flex; flex-wrap: wrap; gap: 12px; }
 .visit__map { border-radius: var(--radius); overflow: hidden; min-height: 360px; background: rgba(255, 255, 255, .06); border: 1px solid rgba(255, 255, 255, .14); }
 .visit__map iframe { width: 100%; height: 100%; min-height: 360px; border: 0; display: block; }
 
 /* ---------- Gallery ---------- */
-.gallery { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
-.gallery__item { grid-column: span 2; border-radius: var(--radius); overflow: hidden; display: block; background: var(--bg-2); }
-.gallery__item--wide { grid-column: span 3; }
-.gallery__item img { width: 100%; height: 340px; object-fit: cover; transition: transform .4s; }
+.gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.gallery__item { border-radius: var(--radius); overflow: hidden; display: block; background: var(--bg-2); }
+.gallery__item img { width: 100%; height: 300px; object-fit: cover; transition: transform .4s; }
 .gallery__item:hover img { transform: scale(1.03); }
 @media (max-width: 800px) {
   .gallery { grid-template-columns: 1fr 1fr; }
-  .gallery__item, .gallery__item--wide { grid-column: span 1; }
   .gallery__item img { height: 220px; }
 }
 @media (max-width: 480px) {

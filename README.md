@@ -40,10 +40,18 @@ The `.nojekyll` file is already in place. Any static host (Netlify, Vercel, Clou
 
 ## Sources
 
-All details come from the clinic's signboards, the timings board and the certificates on display.
-Details that still need confirming with the doctor before going live:
+Details come from the clinic's signboards, timings board, certificates on display, his business card,
+his Google Business profile (rating, reviews, address) and his Mappls listing (pin, pincode).
+Reviews were copied word for word from Google on 20 Nov 2026; six with written comments are featured,
+and the badge shows Google's overall rating so nothing is hidden.
 
-- Institutions where the MBBS and MD were completed, and the years
-- Exact name of the Harvard and Johns Hopkins programmes (signboard: "Mechanical Ventilation for Covid-19", "Covid-19 Contact Tracing & Applied")
-- Whether 81097 70140 is also on WhatsApp
+Deliberately not used: Google's AI Overview text, Justdial's category, and Mappls' 9 AM–9 PM hours
+(the clinic's own boards say Mon–Sat 2–5 PM and 6–8 PM).
+
+Still to confirm with the doctor:
+
+- Which phone numbers to publish. The site shows only 81097 70140; the business card has 97520 20327 and Mappls lists 94253 54374
+- MBBS college (a directory lists Index Medical College, Indore), MD college, and Junior Resident / Medical Officer posts
+- Whether he offers online consultation (a directory mentions Medisage)
+- The domain on his business card, `dr.sovranrai.com`, doesn't load. Register or recover `sovranrai.com`, then add a `CNAME` file here and a DNS record `dr` → `nitishiot.github.io`
 - A proper photo of the doctor
