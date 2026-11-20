@@ -49,7 +49,7 @@ security headers. Custom domain: the Pages project → Custom domains (e.g. `dr.
 
 ## Sources
 
-Details come from the clinic's signboards, timings board, certificates on display, his business card,
+Details come from the clinic's signboards, his Arogya Diabetes smartRx clinic poster (photo and diabetes section), timings board, certificates on display, his business card,
 his Google Business profile (rating, reviews, address) and his Mappls listing (pin, pincode).
 Reviews were copied word for word from Google on 20 Nov 2026; six with written comments are featured,
 and the badge shows Google's overall rating so nothing is hidden.
@@ -63,4 +63,3 @@ Still to confirm with the doctor:
 - MBBS college (a directory lists Index Medical College, Indore), MD college, and Junior Resident / Medical Officer posts
 - Whether he offers online consultation (a directory mentions Medisage)
 - The domain on his business card, `dr.sovranrai.com`, doesn't load. Register or recover `sovranrai.com`, then add a `CNAME` file here and a DNS record `dr` → `nitishiot.github.io`
-- A proper photo of the doctor

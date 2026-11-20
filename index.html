@@ -27,7 +27,7 @@
     "medicalSpecialty": ["InternalMedicine", "Cardiovascular", "Endocrine", "Pulmonary", "Neurologic", "Dermatologic"],
     "telephone": "+91-8109770140",
     "email": "dr.sovranrai@gmail.com",
-    "image": "assets/img/clinic-signboard.jpg",
+    "image": "assets/img/dr-sovran-rai.jpg",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Kanti Rai Memorial Clinic, Indira Nandan Niwas, Aashirwad Hospital Road, Chaudharan Colony, Laxmi Ganj (near Goyal Bhawan)",
@@ -124,14 +124,11 @@
         </div>
 
         <aside class="hero__card" aria-label="Key credentials">
-          <!--
-            To use a real photo of the doctor, replace the .portrait div below with:
-            <img class="portrait portrait--photo" src="assets/img/doctor.jpg" alt="Dr. Sovran Rai">
-          -->
-          <div class="portrait" aria-hidden="true">
-            <svg viewBox="0 0 64 64" class="portrait__icon"><path d="M32 6v52M22 14c0 6 20 6 20 12s-20 6-20 12 20 6 20 12"/><path d="M32 8c-8-6-18-3-24 2 7 0 12 2 16 6M32 8c8-6 18-3 24 2-7 0-12 2-16 6"/></svg>
-            <span class="portrait__initials">SR</span>
-          </div>
+          <figure class="profile">
+            <div class="profile__banner" aria-hidden="true"></div>
+            <img class="profile__photo" src="assets/img/dr-sovran-rai.jpg" width="640" height="640"
+                 alt="Dr. Sovran Rai at his desk in the clinic">
+          </figure>
           <ul class="facts">
             <li>
               <span class="facts__k" data-i18n="facts.degree.k">Qualification</span>
@@ -216,6 +213,7 @@
             <span class="card__icon"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3s6 6.6 6 11a6 6 0 0 1-12 0c0-4.4 6-11 6-11z"/><path d="M9.5 14.5a2.5 2.5 0 0 0 2.5 2.5"/></svg></span>
             <h3 data-i18n="svc.diabetes.t">Diabetes, BP &amp; thyroid</h3>
             <p data-i18n="svc.diabetes.d">Type 2 diabetes management, hypertension and thyroid disorders, with regular follow-up.</p>
+            <a class="card__link" href="#diabetes" data-i18n="svc.diabetes.more">About the diabetes clinic →</a>
           </article>
           <article class="card">
             <span class="card__icon"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v8M12 11l-3 2M12 11l3 2"/><path d="M9 7.5C6 8 4 12 4 16.5 4 19 5 20 6.5 20S9 18.5 9 16.5z"/><path d="M15 7.5c3 .5 5 4.5 5 9 0 2.5-1 3.5-2.5 3.5S15 18.5 15 16.5z"/></svg></span>
@@ -248,6 +246,34 @@
             <p data-i18n="svc.pain.d">Medical management of back pain, neck pain and related nerve symptoms.</p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <!-- ============ Diabetes care ============ -->
+    <section class="section diabetes" id="diabetes">
+      <div class="container diabetes__grid">
+        <div class="diabetes__copy">
+          <p class="eyebrow" data-i18n="dm.eyebrow">Diabetes clinic</p>
+          <h2 data-i18n="dm.title">Your partner in diabetes care</h2>
+          <p class="section__lead" data-i18n="dm.lead">Dr. Sovran Rai's clinic is part of the Arogya Diabetes smartRx programme, offering ongoing diabetes care right here in Guna.</p>
+          <ul class="checks">
+            <li data-i18n="dm.c1">Diagnosis and long-term treatment of type 2 diabetes</li>
+            <li data-i18n="dm.c2">Diabetes risk score check</li>
+            <li data-i18n="dm.c3">Customised diet plans through the Arogya Diabetes smartRx programme</li>
+            <li data-i18n="dm.c4">Regular follow-up of blood sugar, blood pressure and thyroid</li>
+          </ul>
+          <a class="btn btn--primary" href="tel:+918109770140">
+            <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+            <span data-i18n="dm.cta">Book a diabetes check-up</span>
+          </a>
+        </div>
+        <aside class="diabetes__stat" aria-label="Diabetes fact">
+          <p class="diabetes__q" data-i18n="dm.q">Are you at risk of type 2 diabetes?</p>
+          <p class="diabetes__pre" data-i18n="dm.pre">About</p>
+          <p class="diabetes__big" data-i18n="dm.big">1 in 2</p>
+          <p class="diabetes__text" data-i18n="dm.text">people with diabetes don't know they have it.</p>
+          <p class="diabetes__small" data-i18n="dm.small">Diabetes is easier to control when it's found early. Ask about a diabetes risk check at your visit.</p>
+        </aside>
       </div>
     </section>
 

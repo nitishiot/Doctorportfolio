@@ -61,6 +61,7 @@
     "svc.heart.d": "दिल का दौरा — इलाज व बचाव, CHF (हृदय की कमज़ोरी), हाई ब्लड प्रेशर।",
     "svc.diabetes.t": "डायबिटीज़, बी.पी. व थायरॉइड",
     "svc.diabetes.d": "टाइप-2 डायबिटीज़, हाई बी.पी. एवं थायरॉइड रोगों का इलाज व नियमित निगरानी।",
+    "svc.diabetes.more": "डायबिटीज़ क्लिनिक के बारे में →",
     "svc.lungs.t": "फेफड़ों के रोग",
     "svc.lungs.d": "दमा, COPD व छाती के संक्रमण; वेंटिलेशन प्रशिक्षण सहित कोविड पश्चात देखभाल।",
     "svc.neuro.t": "मस्तिष्क व नसें",
@@ -73,6 +74,20 @@
     "svc.fever.d": "मलेरिया, टाइफाइड एवं अन्य मौसमी बुखार।",
     "svc.pain.t": "कमर व गर्दन दर्द",
     "svc.pain.d": "कमर दर्द, गर्दन दर्द एवं संबंधित नसों की तकलीफ़ का इलाज।",
+
+    "dm.eyebrow": "डायबिटीज़ क्लिनिक",
+    "dm.title": "डायबिटीज़ देखभाल में आपका साथी",
+    "dm.lead": "डॉ. सोवरण राय का क्लिनिक आरोग्य डायबिटीज़ स्मार्टRx कार्यक्रम से जुड़ा है, जहाँ गुना में ही डायबिटीज़ की नियमित देखभाल उपलब्ध है।",
+    "dm.c1": "टाइप-2 डायबिटीज़ की जाँच और लंबे समय तक इलाज",
+    "dm.c2": "डायबिटीज़ रिस्क स्कोर की जाँच",
+    "dm.c3": "आरोग्य डायबिटीज़ स्मार्टRx कार्यक्रम के माध्यम से कस्टमाइज़्ड डाइट प्लान",
+    "dm.c4": "ब्लड शुगर, बी.पी. एवं थायरॉइड की नियमित निगरानी",
+    "dm.cta": "डायबिटीज़ जाँच हेतु नंबर लगाएँ",
+    "dm.q": "क्या आपको टाइप-2 डायबिटीज़ होने का जोखिम है?",
+    "dm.pre": "लगभग",
+    "dm.big": "2 में से 1",
+    "dm.text": "डायबिटीज़ मरीज़ को पता ही नहीं होता कि उन्हें डायबिटीज़ है।",
+    "dm.small": "जल्दी पता चलने पर डायबिटीज़ को नियंत्रित करना आसान होता है। अपनी विज़िट पर डायबिटीज़ रिस्क जाँच के बारे में पूछें।",
 
     "edu.eyebrow": "योग्यताएँ",
     "edu.title": "शिक्षा एवं अनुभव",
@@ -384,6 +399,10 @@
   var hero = document.querySelector(".hero");
   function onScroll() {
     if (fab && hero) fab.classList.toggle("is-visible", window.scrollY > hero.offsetTop + hero.offsetHeight - 80);
+    // Back at the top: no section is current, so clear the menu highlight.
+    if (hero && window.scrollY < hero.offsetTop + hero.offsetHeight / 2) {
+      nav.querySelectorAll("a.is-active").forEach(function (a) { a.classList.remove("is-active"); });
+    }
   }
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
