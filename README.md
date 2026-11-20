@@ -33,10 +33,19 @@ python3 -m http.server 8000
 | Change timings      | Hours table in `index.html` (`#visit`), `SESSIONS` in `assets/js/main.js`, top bar text, and the JSON-LD block |
 | Hindi text          | `HI` object at the top of `assets/js/main.js` (keys match `data-i18n` attributes) |
 
-## Deploy (GitHub Pages)
+## Deploy (Cloudflare Pages)
 
-Settings → Pages → *Deploy from a branch* → select the branch and `/ (root)`.
-The `.nojekyll` file is already in place. Any static host (Netlify, Vercel, Cloudflare Pages) also works.
+Workers & Pages → Create → Pages → Connect to Git → choose `nitishiot/Doctorportfolio`.
+
+| Setting | Value |
+|---|---|
+| Production branch | `claude/doctor-website-static-wlh8vt` (or `main` once merged) |
+| Framework preset | None |
+| Build command | *(leave empty)* |
+| Build output directory | `/` |
+
+Every push to the production branch redeploys automatically. `_headers` sets caching and basic
+security headers. Custom domain: the Pages project → Custom domains (e.g. `dr.sovranrai.com`).
 
 ## Sources
 
