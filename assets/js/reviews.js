@@ -15,7 +15,9 @@ window.GOOGLE_PROFILE_URL = "https://share.google/HjbwcGCvPJSmoIJrW";
 // directions" opens Google Maps directions to the clinic. Find it at
 // https://developers.google.com/maps/documentation/places/web-service/place-id
 // (search the clinic's name, pick the right pin, copy the ID).
-window.GOOGLE_PLACE_ID = "";
+// Converted from the feature ID in the clinic's Google Maps link
+// (0x397a5d5f2de94761:0xd295b57f81e810c8, listed as "डॉ. सोवरण राय एम.डी. मेडिसिन (गोल्ड मेडलिस्ट)").
+window.GOOGLE_PLACE_ID = "ChIJYUfpLV9dejkRyBDogX-1ldI";
 
 // Optional: the "Ask for reviews" link from the clinic's Google Business Profile
 // (looks like https://g.page/r/XXXX/review). If set, "Write a review" uses it;

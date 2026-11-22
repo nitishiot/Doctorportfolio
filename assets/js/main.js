@@ -406,12 +406,12 @@
   function applyGoogleLinks() {
     var profile = window.GOOGLE_PROFILE_URL || "";
     var id = encodeURIComponent(window.GOOGLE_PLACE_ID || "");
-    var name = encodeURIComponent("Kanti Rai Memorial Clinic, Guna");
+    var spot = "24.6488541,77.3073472"; // clinic's pin on Google Maps; used if the place ID can't be matched
     var links = {
       reviews: id ? "https://search.google.com/local/reviews?placeid=" + id : profile,
       write: window.GOOGLE_REVIEW_FORM_URL ||
              (id ? "https://search.google.com/local/writereview?placeid=" + id : profile),
-      directions: id ? "https://www.google.com/maps/dir/?api=1&destination=" + name + "&destination_place_id=" + id : profile
+      directions: id ? "https://www.google.com/maps/dir/?api=1&destination=" + spot + "&destination_place_id=" + id : profile
     };
     document.querySelectorAll("[data-google-link]").forEach(function (a) {
       var url = links[a.getAttribute("data-google-link")] || profile;
