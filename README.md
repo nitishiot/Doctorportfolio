@@ -50,7 +50,10 @@ Workers & Pages → Create → Pages → Connect to Git → choose `nitishiot/Do
 | Build output directory | `/` |
 
 Every push to the production branch redeploys automatically. `_headers` sets caching and basic
-security headers. Custom domain: the Pages project → Custom domains (e.g. `dr.sovranrai.com`).
+security headers. Custom domain, if one is bought later: the Pages project → Custom domains.
+
+The site is currently live on GitHub Pages at https://nitishiot.github.io/Doctorportfolio/, built from
+`claude/doctor-website-static-wlh8vt`.
 
 ## Sources
 
@@ -69,13 +72,14 @@ Deliberately not used: Google's AI Overview text, Justdial's category, and Mappl
 Evening hours are 6:00–8:30 PM, confirmed by the client in Nov 2026 and matching the clinic whiteboard
 (photo of 25 Feb 2025). The printed banner and the older whiteboard photo in the gallery still say 8 PM.
 
-The patient shown in `assets/img/clinic-consultation.jpg` (About section) agreed to appear on the site (confirmed by the
-client, Nov 2026).
+Confirmed by the client, Nov 2026:
+
+- The patient shown in `assets/img/clinic-consultation.jpg` (About section) agreed to appear on the site
+- Token booking by phone 9 AM–8 PM (as on the clinic whiteboard)
+- He offers online consultation. No platform or link was given, so the site says to call 81097 70140 to arrange one
+- The domain printed on his business card does not exist; the site doesn't use or mention it
 
 Still to confirm with the doctor:
 
-- Token booking hours: the clinic whiteboard says numbers can be booked by phone 9 AM–8 PM. Not on the site yet
 - Phone numbers 97520 20327 (business card) and 94253 54374 (Mappls) are shown with a "To be confirmed" label. Once confirmed, delete the `<span class="tbc">` next to each number in `index.html` (two in the location section, two in the footer). 81097 70140 is confirmed by the clinic's signboards
-- MBBS college (a directory lists Index Medical College, Indore), MD college, and Junior Resident / Medical Officer posts
-- Whether he offers online consultation (a directory mentions Medisage)
-- The domain on his business card, `dr.sovranrai.com`, doesn't load. Register or recover `sovranrai.com`, then add a `CNAME` file here and a DNS record `dr` → `nitishiot.github.io`
+- MBBS college (a directory lists Index Medical College, Indore), MD college, and Junior Resident / Medical Officer posts — the client will send these
