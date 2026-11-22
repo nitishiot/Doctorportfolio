@@ -5,7 +5,7 @@ Scanning it with a phone camera shows the website link to tap.
 
     pip install segno
     python3 scripts/make-qr.py                       # current site address
-    python3 scripts/make-qr.py https://example.com/  # a new address (e.g. after moving to Cloudflare)
+    python3 scripts/make-qr.py https://example.com/  # a new address (e.g. a custom domain)
 
 Writes assets/qr/website-qr.svg and assets/qr/website-qr.png. If the address
 changes, regenerate before printing, and keep the old address working for any
@@ -16,7 +16,7 @@ import sys
 
 import segno
 
-URL = sys.argv[1] if len(sys.argv) > 1 else "https://nitishiot.github.io/Doctorportfolio/"
+URL = sys.argv[1] if len(sys.argv) > 1 else "https://drsovranrai.pages.dev/"
 OUT = pathlib.Path(__file__).resolve().parent.parent / "assets" / "qr"
 OUT.mkdir(parents=True, exist_ok=True)
 

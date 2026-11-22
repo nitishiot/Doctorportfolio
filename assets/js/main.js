@@ -401,10 +401,22 @@
     return e;
   }
 
-  function applyProfileLinks() {
-    var url = window.GOOGLE_PROFILE_URL;
-    if (!url) return;
-    document.querySelectorAll("[data-google-link]").forEach(function (a) { a.href = url; });
+  /* Google buttons: each points at the most specific page available.
+   * data-google-link="reviews" | "write" | "directions" (settings in reviews.js) */
+  function applyGoogleLinks() {
+    var profile = window.GOOGLE_PROFILE_URL || "";
+    var id = encodeURIComponent(window.GOOGLE_PLACE_ID || "");
+    var spot = "24.6488541,77.3073472"; // clinic's pin on Google Maps; used if the place ID can't be matched
+    var links = {
+      reviews: id ? "https://search.google.com/local/reviews?placeid=" + id : profile,
+      write: window.GOOGLE_REVIEW_FORM_URL ||
+             (id ? "https://search.google.com/local/writereview?placeid=" + id : profile),
+      directions: id ? "https://www.google.com/maps/dir/?api=1&destination=" + spot + "&destination_place_id=" + id : profile
+    };
+    document.querySelectorAll("[data-google-link]").forEach(function (a) {
+      var url = links[a.getAttribute("data-google-link")] || profile;
+      if (url) a.href = url;
+    });
   }
 
   function renderReviews() {
@@ -467,6 +479,6 @@
   updateActiveLink();
   var yr = document.getElementById("year");
   if (yr) yr.textContent = String(new Date().getFullYear());
-  applyProfileLinks();
+  applyGoogleLinks();
   setLang(storageGet("lang") || "en");
 })();

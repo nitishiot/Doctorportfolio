@@ -62,44 +62,59 @@ with a content hash (`styles.css?v=…`) so visitors never get a new page with o
 |---------------------|-------|
 | Add patient reviews | `assets/js/reviews.js` — paste reviews word for word from the Google profile; optional `translation` shows in the other language, labelled "Translated" |
 | Google rating badge | `REVIEW_SUMMARY` in `assets/js/reviews.js` (rating and review count as shown on Google) |
-| Google profile link | `GOOGLE_PROFILE_URL` in `assets/js/reviews.js` (used by the review and directions buttons) |
+| Google buttons      | Place ID `ChIJYUfpLV9dejkRyBDogX-1ldI` (from the Maps feature ID `0x397a5d5f2de94761:0xd295b57f81e810c8`). If Google ever stops opening the review list or form from it, these older links do the same job: reviews `https://www.google.com/search?q=Dr+Sovran+Rai+Guna#lrd=0x397a5d5f2de94761:0xd295b57f81e810c8,1`, write a review `…,3`. In `assets/js/reviews.js`: `GOOGLE_PLACE_ID` makes "See all reviews", "Write a review" and "Get directions" open the review list, the review form and Maps directions. `GOOGLE_REVIEW_FORM_URL` (the Business Profile's "Ask for reviews" link) overrides the review form link. Without them, all three fall back to `GOOGLE_PROFILE_URL` |
 | Doctor's photos     | Profile photo (left column): `assets/img/dr-sovran-rai-portrait.jpg` (square, shown as a circle). Link-preview and search image (`og:image`, JSON-LD): `assets/img/dr-sovran-rai-headshot.jpg`. When replacing a photo, use a new file name — `/assets/*` is cached for a day |
 | Change timings      | Hours table in the right column of `index.html` (`#visit`), `SESSIONS` in `assets/js/main.js`, top bar text, the FAQ answer `faq.a2` (English in `index.html`, Hindi in `main.js`), and the JSON-LD block |
 | WhatsApp            | Number: `WHATSAPP_NUMBER` in `assets/js/main.js` and the two `data-wa` links in `index.html` (booking card and phone bar). Pre-filled message: `waText` in the `UI` object in `main.js` (English and Hindi) |
 | Page width          | `--max-w` at the top of `assets/css/styles.css` (currently 2560px, so only ultrawide monitors show side margins). Text size and side-column widths for big screens are in the two `min-width: 1600px` / `2000px` blocks just below `.wrap` |
 | Hindi text          | `HI` object at the top of `assets/js/main.js` (keys match `data-i18n` attributes) |
 
-## Deploy (Cloudflare Pages)
+## Live site and publishing
 
-One-time setup in the Cloudflare dashboard:
+The site is live at **https://drsovranrai.pages.dev/** (Cloudflare Pages), and also at
+https://nitishiot.github.io/Doctorportfolio/ (GitHub Pages). Both publish the `main` branch.
+The page's canonical link points search engines at the Cloudflare address.
 
-1. Workers & Pages → Create application → Pages → Connect to Git → GitHub.
-2. GitHub asks to install the Cloudflare app: choose "Only select repositories" → `nitishiot/Doctorportfolio`.
-3. Back in Cloudflare, pick the repository → Begin setup, enter the settings below → Save and Deploy.
+How a change goes live:
+
+1. The change is made on a working branch and pushed to GitHub.
+2. Cloudflare builds a preview of that branch automatically (about a minute) at its own address, and
+   adds the link to the pull request.
+3. A pull request into `main` shows the change. Check the preview on desktop and phone.
+4. **Merge** the pull request. That publishes it: Cloudflare and GitHub Pages both rebuild from `main`.
+
+To undo a change that went live, use **Revert** on the merged pull request in GitHub and merge the
+revert.
+
+### Cloudflare Pages settings
+
+Set up in the Cloudflare dashboard: Workers & Pages → Create application → Pages → Connect to Git →
+GitHub (Cloudflare's GitHub app limited to this repository).
 
 | Setting | Value |
 |---|---|
-| Project name | Becomes the address `<project-name>.pages.dev` |
-| Production branch | `claude/doctor-website-static-wlh8vt` (the branch the site is on; use `main` instead if `main` is brought up to date) |
+| Project name | `drsovranrai` (gives `drsovranrai.pages.dev`) |
+| Production branch | `main` |
 | Framework preset | None |
-| Build command | *(leave empty)* — or `exit 0` |
+| Build command | *(empty)* |
 | Build output directory | `/` (the repository root, where `index.html` is) |
 
-After that, every push to the production branch goes live automatically within a minute or two, and
-pushes to other branches get their own preview link. `_headers` sets caching and basic security
-headers. Custom domain, if one is bought later: the Pages project → Custom domains.
+`_headers` sets caching and basic security headers. Custom domain, if one is bought later: the Pages
+project → Custom domains; then update the canonical link, `og:url`, `og:image` and the JSON-LD `url`
+and `image` at the top of `index.html`, and regenerate the QR code.
 
-The site is also live on GitHub Pages at https://nitishiot.github.io/Doctorportfolio/, built from
-`claude/doctor-website-static-wlh8vt`. Keep GitHub Pages switched on while any printed QR code points
-to that address.
+### GitHub Pages settings
+
+Repository Settings → Pages → Build and deployment → Branch: `main`, folder `/ (root)`. Keep it switched
+on while any printed QR code points to the github.io address.
 
 ## QR code
 
 `assets/qr/` holds a QR code for the website: `website-qr.svg` (for printing at any size),
 `website-qr.png`, and a printable A6 card (`website-qr-card.pdf` / `.png`) with the doctor's name,
 "scan to visit our website" in English and Hindi, and the booking number. It encodes
-https://nitishiot.github.io/Doctorportfolio/. If the address changes (Cloudflare or a custom domain),
-regenerate the code before printing:
+https://drsovranrai.pages.dev/. If the address changes (for example a custom domain), regenerate the code before
+printing:
 
 ```bash
 pip install segno
