@@ -36,6 +36,7 @@
   --font-hi-serif: "Noto Serif Devanagari", "Noto Sans Devanagari", Georgia, serif;
 
   /* Layout */
+  --max-w: 1280px;      /* widest the page gets, including the 24px side padding */
   --left-w: 264px;
   --right-w: 312px;
   --gap: 24px;
@@ -60,14 +61,14 @@ html[data-lang="hi"] body { font-family: var(--font-hi); line-height: 1.75; }
 
 img { max-width: 100%; height: auto; display: block; }
 a { color: var(--blue-600); }
-h1, h2, h3, h4 { margin: 0; color: var(--blue-900); line-height: 1.2; }
+h1, h2, h3, h4 { margin: 0; color: var(--blue-900); line-height: 1.2; text-wrap: balance; }
 h2 { font-family: var(--font-serif); font-weight: 600; font-size: clamp(1.5rem, 1.1rem + 2cqi, 2.1rem); letter-spacing: -.01em; }
 h3 { font-size: 1.08rem; font-weight: 600; }
 h4 { font-size: 1.02rem; font-weight: 600; }
 html[data-lang="hi"] h2 { font-family: var(--font-hi-serif); font-weight: 700; letter-spacing: 0; }
 p { margin: 0 0 1em; }
 
-.wrap { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 24px; }
+.wrap { width: 100%; max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
 @media (max-width: 480px) { .wrap { padding: 0 16px; } }
 
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
