@@ -69,6 +69,7 @@ with a content hash (`styles.css?v=…`) so visitors never get a new page with o
 | Page width          | `--max-w` at the top of `assets/css/styles.css` (currently 2560px, so only ultrawide monitors show side margins). Text size and side-column widths for big screens are in the two `min-width: 1600px` / `2000px` blocks just below `.wrap` |
 | Hindi text          | `HI` object at the top of `assets/js/main.js` (keys match `data-i18n` attributes) |
 | Online profiles     | Facebook, YouTube, X, Justdial, MedSynapse and Mappls links appear three times in `index.html`: the icon row in the profile card (`.social`), the footer's Contact column (`.footer__social`), and `sameAs` in the JSON-LD block. Change all three. The icons are `<symbol>`s at the top of `<body>`; Facebook, YouTube and X are the official marks from [Simple Icons](https://simpleicons.org/) (CC0), the other three are plain line icons because those services publish no simple mark |
+| Website credit      | Last line of the footer: `footer.credit`, English in `index.html` and Hindi in the `HI` object in `assets/js/main.js` (the link is inside the text, so change it in both). It links to the developer's contact section rather than showing a phone number, so patients don't call it to book |
 
 ## Live site and publishing
 
@@ -156,6 +157,7 @@ Confirmed by the client, Nov 2026 (later):
   [X](https://x.com/dr_sovran), [Justdial](https://www.justdial.com/Guna/DrSovran-Rai-Choudharan-Colony/9999P7542-7542-230904205341-T5V6_BZDET),
   [MedSynapse](https://www.medsynapse.app/doctors/dr-sovran-rai-79336) and [Mappls](https://www.mappls.com/hk2vr5)
   (the X link as given ended in `?lang=en`, dropped so X opens in the visitor's own language)
+- A small developer credit on the last line of the footer ("Website by Nitish Gupta"), linking to the developer's contact details
 
 Still to confirm with the doctor:
 
