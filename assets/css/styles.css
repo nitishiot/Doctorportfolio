@@ -465,7 +465,11 @@ html[data-lang="hi"] .footer__name { font-family: var(--font-hi-serif); }
 .footer__social a { display: inline-flex; align-items: center; gap: 7px; }
 .footer__social a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .footer__social svg { width: 15px; height: 15px; flex: none; color: #b7c5e0; }
-.footer__bottom { border-top: 1px solid rgba(255, 255, 255, .1); margin-top: 36px; padding-top: 18px; padding-bottom: calc(22px + env(safe-area-inset-bottom)); font-size: .82rem; color: #8a9bbd; }
+.footer__bottom { border-top: 1px solid rgba(255, 255, 255, .1); margin-top: 36px; padding-top: 18px; padding-bottom: calc(22px + env(safe-area-inset-bottom)); font-size: .82rem; color: #8a9bbd; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 32px; }
+.footer .footer__bottom p { margin: 0; }
+/* Developer credit: quieter than the clinic's own links */
+.footer__credit a { color: #fff; font-weight: 600; white-space: nowrap; text-decoration: underline; text-decoration-color: rgba(255, 255, 255, .45); text-underline-offset: 3px; }
+.footer__credit a:hover { text-decoration-color: currentColor; }
 
 /* ---------- Phone action bar ---------- */
 .actionbar { display: none; }
