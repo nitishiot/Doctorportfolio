@@ -42,6 +42,9 @@ assets/css/styles.css   Styles
 assets/js/main.js       Hindi translations, section-link highlighting, "open now" status, WhatsApp message, review rendering
 assets/js/reviews.js    Patient reviews (edit this file to add reviews)
 assets/img/             Clinic photos and certificate/award crops
+404.html                "Page not found" page, English and Hindi, for mistyped addresses
+_headers, _redirects    Cloudflare headers; redirects that keep README.md and CLAUDE.md off the live site
+robots.txt, sitemap.xml For search engines (main address only)
 ```
 
 ## Preview locally
@@ -101,9 +104,9 @@ GitHub (Cloudflare's GitHub app limited to this repository).
 | Build command | *(empty)* |
 | Build output directory | `/` (the repository root, where `index.html` is) |
 
-`_headers` sets caching and basic security headers. Custom domain, if one is bought later: the Pages
+`_headers` sets caching and basic security headers. `_redirects` sends `/README.md` and `/CLAUDE.md` to the home page on Cloudflare, because the repository root is also the published folder. GitHub Pages ignores `_redirects` and still serves both files; to close that too, move the site's files into `docs/` and switch both hosts to that folder in the same change (Cloudflare: build output directory `docs`; GitHub Pages: folder `/docs`). Custom domain, if one is bought later: the Pages
 project → Custom domains; then update the canonical link, `og:url`, `og:image` and the JSON-LD `url`
-and `image` at the top of `index.html`, and regenerate the QR code.
+and `image` at the top of `index.html`, the addresses in `robots.txt`, `sitemap.xml` and `404.html`, and regenerate the QR code.
 
 ### GitHub Pages settings
 

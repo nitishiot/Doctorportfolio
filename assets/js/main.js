@@ -204,7 +204,7 @@
       opensAt: "Closed now · opens today at {t}",
       opensTomorrow: "Closed now · opens {d} at 2:00 PM",
       today: "Today",
-      langLabel: "Switch language to Hindi",
+      langLabel: "EN हिंदी: switch language to Hindi",
       title: "Dr. Sovran Rai — MD Medicine, Consultant Physician in Guna",
       waText: "Hello Doctor, I would like to book a token for a consultation."
     },
@@ -213,7 +213,7 @@
       opensAt: "अभी बंद है · आज {t} से खुलेगा",
       opensTomorrow: "अभी बंद है · {d} दोपहर 2:00 बजे से खुलेगा",
       today: "आज",
-      langLabel: "भाषा अंग्रेज़ी में बदलें",
+      langLabel: "EN हिंदी: भाषा अंग्रेज़ी में बदलें",
       title: "डॉ. सोवरण राय — एम.डी. मेडिसिन, परामर्श चिकित्सक, गुना",
       waText: "नमस्ते डॉक्टर साहब, मुझे परामर्श के लिए नंबर लगवाना है।"
     }
