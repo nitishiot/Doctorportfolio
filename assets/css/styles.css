@@ -437,8 +437,6 @@ html[data-lang="hi"] .hours tr.is-today th::after { letter-spacing: 0; font-size
 .phones a:hover { text-decoration: underline; }
 .phones a .i { color: var(--teal-600); width: 15px; height: 15px; }
 .phones__note { font-size: .8rem; color: var(--ink-3); }
-.tbc { display: inline-block; font-size: .66rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; padding: 1px 7px; border-radius: 999px; background: #f5d58a; color: #5c4203; white-space: nowrap; vertical-align: middle; }
-html[data-lang="hi"] .tbc { letter-spacing: 0; font-size: .76rem; text-transform: none; }
 
 .side-card--alert { background: #fff7ed; border-color: #fde2c4; }
 .side-card--alert .side-card__title { color: #9a3412; margin-bottom: 6px; }

@@ -71,20 +71,42 @@ with a content hash (`styles.css?v=…`) so visitors never get a new page with o
 
 ## Deploy (Cloudflare Pages)
 
-Workers & Pages → Create → Pages → Connect to Git → choose `nitishiot/Doctorportfolio`.
+One-time setup in the Cloudflare dashboard:
+
+1. Workers & Pages → Create application → Pages → Connect to Git → GitHub.
+2. GitHub asks to install the Cloudflare app: choose "Only select repositories" → `nitishiot/Doctorportfolio`.
+3. Back in Cloudflare, pick the repository → Begin setup, enter the settings below → Save and Deploy.
 
 | Setting | Value |
 |---|---|
-| Production branch | `claude/doctor-website-static-wlh8vt` (or `main` once merged) |
+| Project name | Becomes the address `<project-name>.pages.dev` |
+| Production branch | `claude/doctor-website-static-wlh8vt` (the branch the site is on; use `main` instead if `main` is brought up to date) |
 | Framework preset | None |
-| Build command | *(leave empty)* |
-| Build output directory | `/` |
+| Build command | *(leave empty)* — or `exit 0` |
+| Build output directory | `/` (the repository root, where `index.html` is) |
 
-Every push to the production branch redeploys automatically. `_headers` sets caching and basic
-security headers. Custom domain, if one is bought later: the Pages project → Custom domains.
+After that, every push to the production branch goes live automatically within a minute or two, and
+pushes to other branches get their own preview link. `_headers` sets caching and basic security
+headers. Custom domain, if one is bought later: the Pages project → Custom domains.
 
-The site is currently live on GitHub Pages at https://nitishiot.github.io/Doctorportfolio/, built from
-`claude/doctor-website-static-wlh8vt`.
+The site is also live on GitHub Pages at https://nitishiot.github.io/Doctorportfolio/, built from
+`claude/doctor-website-static-wlh8vt`. Keep GitHub Pages switched on while any printed QR code points
+to that address.
+
+## QR code
+
+`assets/qr/` holds a QR code for the website: `website-qr.svg` (for printing at any size),
+`website-qr.png`, and a printable A6 card (`website-qr-card.pdf` / `.png`) with the doctor's name,
+"scan to visit our website" in English and Hindi, and the booking number. It encodes
+https://nitishiot.github.io/Doctorportfolio/. If the address changes (Cloudflare or a custom domain),
+regenerate the code before printing:
+
+```bash
+pip install segno
+python3 scripts/make-qr.py https://new-address/
+```
+
+The card would need regenerating too.
 
 ## Sources
 
@@ -110,8 +132,11 @@ Confirmed by the client, Nov 2026:
 - He offers online consultation. No platform or link was given, so the site says to call 81097 70140 to arrange one
 - The domain printed on his business card does not exist; the site doesn't use or mention it
 
+Confirmed by the client, Nov 2026 (later):
+
+- 81097 70140 is on WhatsApp; the Call / WhatsApp buttons use it
+- Alternate numbers 97520 20327 and 94253 54374; the "To be confirmed" labels were removed
+
 Still to confirm with the doctor:
 
-- WhatsApp: the Call / WhatsApp buttons use 81097 70140 for WhatsApp too. Confirm that number is on WhatsApp (ideally WhatsApp Business), or change it as described under "Common edits"
-- Phone numbers 97520 20327 (business card) and 94253 54374 (Mappls) are shown with a "To be confirmed" label. Once confirmed, delete the `<span class="tbc">` next to each number in `index.html` (two in the right column's contact list, two in the footer). 81097 70140 is confirmed by the clinic's signboards
 - MBBS college (a directory lists Index Medical College, Indore), MD college, and Junior Resident / Medical Officer posts — the client will send these
