@@ -84,6 +84,7 @@ p { margin: 0 0 1em; }
   :root { --gutter: 48px; --left-w: 316px; --right-w: 380px; --gap: 32px; }
 }
 
+.sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 
 .i { width: 18px; height: 18px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
@@ -188,6 +189,13 @@ html[data-lang="hi"] .profile__name-hi { display: none; }
 .creds span { padding: 3px 10px; border-radius: 999px; background: #fff; border: 1px solid var(--line); font-weight: 600; font-size: .8rem; color: var(--blue-800); }
 .creds .gold { background: var(--gold-100); border-color: #efd99a; color: #7a5806; }
 .profile .profile__status { display: none; margin-top: 14px; }   /* phones only; elsewhere the right column shows it */
+
+/* Online profiles: a row of round icon links under the credentials */
+.social { list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; }
+.social a { display: grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%; background: var(--blue-50); border: 1px solid var(--line); color: var(--blue-700); transition: background-color .15s, border-color .15s, color .15s; }
+.social a:hover { background: var(--blue-700); border-color: var(--blue-700); color: #fff; }
+.social a:focus-visible { border-radius: 50%; }
+.social svg { width: 15px; height: 15px; }
 
 .facts { list-style: none; margin: 0; padding: 14px 18px 16px; display: grid; gap: 10px; border-top: 1px solid var(--line); }
 .facts li { display: grid; gap: 1px; }
@@ -452,6 +460,11 @@ html[data-lang="hi"] .hours tr.is-today th::after { letter-spacing: 0; font-size
 html[data-lang="hi"] .footer__name { font-family: var(--font-hi-serif); }
 .footer__h { color: #fff; font-weight: 600; margin-bottom: 10px !important; }
 .footer__muted { color: #8a9bbd; font-size: .85rem; }
+.footer .footer__h--sub { margin-top: 18px; }
+.footer__social { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.footer__social a { display: inline-flex; align-items: center; gap: 7px; }
+.footer__social a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.footer__social svg { width: 15px; height: 15px; flex: none; color: #b7c5e0; }
 .footer__bottom { border-top: 1px solid rgba(255, 255, 255, .1); margin-top: 36px; padding-top: 18px; padding-bottom: calc(22px + env(safe-area-inset-bottom)); font-size: .82rem; color: #8a9bbd; }
 
 /* ---------- Phone action bar ---------- */
@@ -490,7 +503,7 @@ html[data-lang="hi"] .footer__name { font-family: var(--font-hi-serif); }
   .profile__banner { display: none; }
   .profile__photo { width: 112px; height: 112px; margin: 20px 0 20px 22px; border-width: 3px; box-shadow: var(--shadow-s); }
   .profile__body { text-align: left; padding: 20px 22px; }
-  .creds { justify-content: flex-start; }
+  .creds, .social { justify-content: flex-start; }
   .facts { border-top: 0; border-left: 1px solid var(--line); align-self: stretch; align-content: center; padding: 18px 22px; }
 }
 
@@ -499,6 +512,9 @@ html[data-lang="hi"] .footer__name { font-family: var(--font-hi-serif); }
   .layout { grid-template-columns: minmax(0, 1fr); grid-template-areas: "profile" "toc" "content" "right"; gap: 16px; padding-top: 16px; }
   .side--right { position: static; max-height: none; overflow: visible; margin: 0; padding: 0; }
   .profile .profile__status { display: inline-flex; }
+  .social { gap: 8px; }
+  .social a { width: 2.5rem; height: 2.5rem; }
+  .social svg { width: 18px; height: 18px; }
   .toc__visit { display: block; }
   .footer__emergency { display: none; }
 
