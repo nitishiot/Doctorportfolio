@@ -68,6 +68,7 @@ with a content hash (`styles.css?v=…`) so visitors never get a new page with o
 | WhatsApp            | Number: `WHATSAPP_NUMBER` in `assets/js/main.js` and the two `data-wa` links in `index.html` (booking card and phone bar). Pre-filled message: `waText` in the `UI` object in `main.js` (English and Hindi) |
 | Page width          | `--max-w` at the top of `assets/css/styles.css` (currently 2560px, so only ultrawide monitors show side margins). Text size and side-column widths for big screens are in the two `min-width: 1600px` / `2000px` blocks just below `.wrap` |
 | Hindi text          | `HI` object at the top of `assets/js/main.js` (keys match `data-i18n` attributes) |
+| Online profiles     | Facebook, YouTube, X, Justdial, MedSynapse and Mappls links appear three times in `index.html`: the icon row in the profile card (`.social`), the footer's Contact column (`.footer__social`), and `sameAs` in the JSON-LD block. Change all three. The icons are `<symbol>`s at the top of `<body>`; Facebook, YouTube and X are the official marks from [Simple Icons](https://simpleicons.org/) (CC0), the other three are plain line icons because those services publish no simple mark |
 
 ## Live site and publishing
 
@@ -151,6 +152,10 @@ Confirmed by the client, Nov 2026 (later):
 
 - 81097 70140 is on WhatsApp; the Call / WhatsApp buttons use it
 - Alternate numbers 97520 20327 and 94253 54374; the "To be confirmed" labels were removed
+- His online profiles: [Facebook](https://www.facebook.com/dr.sovranrai/), [YouTube](https://www.youtube.com/@9752020327),
+  [X](https://x.com/dr_sovran), [Justdial](https://www.justdial.com/Guna/DrSovran-Rai-Choudharan-Colony/9999P7542-7542-230904205341-T5V6_BZDET),
+  [MedSynapse](https://www.medsynapse.app/doctors/dr-sovran-rai-79336) and [Mappls](https://www.mappls.com/hk2vr5)
+  (the X link as given ended in `?lang=en`, dropped so X opens in the visitor's own language)
 
 Still to confirm with the doctor:
 

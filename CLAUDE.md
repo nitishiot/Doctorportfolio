@@ -28,10 +28,3 @@ https://nitishiot.github.io/Doctorportfolio/ (GitHub Pages).
 Three columns: left `.side--left` (profile card and "On this page" links), centre `#main` (content
 panels, which adapt with container queries), right `#visit` (booking, hours, address and contact).
 Under 1200px the profile goes across the top; under 900px it's one column with a Call / WhatsApp bar.
-
-## Pending
-
-- **Add the doctor's social media profiles.** Ask the owner for the exact profile links first. Put a
-  row of icons (inline SVG, `target="_blank" rel="noopener"`, an `aria-label` naming the network) in
-  the left profile card under the credentials, and the same links in the footer's Contact column.
-  Add the links to the `sameAs` list in the JSON-LD block in `index.html`. Remove this item when done.
