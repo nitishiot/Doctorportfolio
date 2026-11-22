@@ -64,11 +64,14 @@ Reviews were copied word for word from Google on 20 Nov 2026; six with written c
 and the badge shows Google's overall rating so nothing is hidden.
 
 Deliberately not used: Google's AI Overview text, Justdial's category, and Mappls' 9 AM–9 PM hours
-(the clinic's own boards say Mon–Sat 2–5 PM and 6–8 PM).
+(the clinic's own boards give two sessions, Mon–Sat 2–5 PM and 6–8:30 PM).
+
+Evening hours are 6:00–8:30 PM, confirmed by the client in Nov 2026 and matching the clinic whiteboard
+(photo of 25 Feb 2025). The printed banner and the older whiteboard photo in the gallery still say 8 PM.
 
 Still to confirm with the doctor:
 
-- Evening hours: the whiteboard in the clinic (photo of 25 Feb 2025) says 6:00–8:30 PM and token booking 9 AM–8 PM, but the printed banner photographed the same day says 6–8 PM. The site still shows 6–8 PM; if 8:30 is right, update the places listed under "Change timings"
+- Token booking hours: the clinic whiteboard says numbers can be booked by phone 9 AM–8 PM. Not on the site yet
 - Consent from the patient in `assets/img/clinic-consultation.jpg` (About section) — his face is clearly visible. Without it, swap that image back to `clinic-signboard.jpg` or another photo
 
 - Phone numbers 97520 20327 (business card) and 94253 54374 (Mappls) are shown with a "To be confirmed" label. Once confirmed, delete the `<span class="tbc">` next to each number in `index.html` (two in the location section, two in the footer). 81097 70140 is confirmed by the clinic's signboards
