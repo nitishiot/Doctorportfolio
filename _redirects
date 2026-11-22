@@ -1,0 +1,5 @@
+# Cloudflare Pages: these working notes live in the repository root, which is also the published
+# folder. Redirects apply even when the file exists, so the notes are no longer readable on
+# drsovranrai.pages.dev. (GitHub Pages ignores this file; see README → Live site and publishing.)
+/README.md  /  301
+/CLAUDE.md  /  301
