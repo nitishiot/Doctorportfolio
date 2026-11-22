@@ -73,8 +73,6 @@ security headers. Custom domain, if one is bought later: the Pages project → C
 
 The site is currently live on GitHub Pages at https://nitishiot.github.io/Doctorportfolio/, built from
 `claude/doctor-website-static-wlh8vt`.
-The three-column layout is on `claude/inspiring-hopper-ei12z0`. To publish it, merge that branch into
-the one GitHub Pages builds from (or point Pages at it: Settings → Pages → Branch).
 
 ## Sources
 
