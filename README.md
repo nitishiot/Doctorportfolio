@@ -17,9 +17,20 @@ One long page in three columns:
 
 | Screen width | Behaviour |
 |---|---|
-| 1200px and wider | Three columns. The right column stays in view (and scrolls on its own if taller than the window). The left column stays in view when the window is tall enough for all of it; otherwise the profile scrolls away and the section links stay. |
+| 1200px and wider | Three columns, using the full width of the screen (up to 2560px). The right column stays in view (and scrolls on its own if taller than the window). The left column stays in view when the window is tall enough for all of it; otherwise the profile scrolls away and the section links stay. |
 | 900–1199px | Profile across the top, section links as a bar that sticks to the top, then content beside the right column |
 | Under 900px | One column: profile, section links bar, content, then the right column's cards. A Call / WhatsApp bar is fixed to the bottom of the screen |
+
+Big screens get slightly larger text and wider side columns so the page fills the screen without
+looking stretched. When the centre column is wide, its content uses the room: About photo beside the
+text, treatment cards four across, the three certificate photos in one row, a larger first gallery photo, and a
+two-column FAQ.
+
+| Window width | Typical screen | Text | Left · right column |
+|---|---|---|---|
+| 1200–1599px | 1280 / 1366 / 1440 / 1536px laptops | 16px | 264 · 312px |
+| 1600–1999px | 1080p laptops, 24" monitors | 17px | 288 · 344px |
+| 2000px and wider | 27" 1440p monitors, 4K at 150% | 18px | 316 · 380px |
 
 The centre panels use CSS container queries, so cards and grids adapt to the column's width rather than the screen's.
 
@@ -55,7 +66,7 @@ with a content hash (`styles.css?v=…`) so visitors never get a new page with o
 | Doctor's photos     | Profile photo (left column): `assets/img/dr-sovran-rai-portrait.jpg` (square, shown as a circle). Link-preview and search image (`og:image`, JSON-LD): `assets/img/dr-sovran-rai-headshot.jpg`. When replacing a photo, use a new file name — `/assets/*` is cached for a day |
 | Change timings      | Hours table in the right column of `index.html` (`#visit`), `SESSIONS` in `assets/js/main.js`, top bar text, the FAQ answer `faq.a2` (English in `index.html`, Hindi in `main.js`), and the JSON-LD block |
 | WhatsApp            | Number: `WHATSAPP_NUMBER` in `assets/js/main.js` and the two `data-wa` links in `index.html` (booking card and phone bar). Pre-filled message: `waText` in the `UI` object in `main.js` (English and Hindi) |
-| Page width          | `--max-w` at the top of `assets/css/styles.css` (currently 1280px). Larger makes the centre column wider on big screens |
+| Page width          | `--max-w` at the top of `assets/css/styles.css` (currently 2560px, so only ultrawide monitors show side margins). Text size and side-column widths for big screens are in the two `min-width: 1600px` / `2000px` blocks just below `.wrap` |
 | Hindi text          | `HI` object at the top of `assets/js/main.js` (keys match `data-i18n` attributes) |
 
 ## Deploy (Cloudflare Pages)
