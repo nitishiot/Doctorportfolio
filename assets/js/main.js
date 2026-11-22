@@ -195,7 +195,7 @@
     "footer.emergency.t": "आपातकाल?",
     "footer.emergency.d": "यह ओ.पी.डी. क्लिनिक है। चिकित्सीय आपातकाल में 108 पर कॉल करें या नज़दीकी अस्पताल जाएँ।",
     "footer.disclaimer": "इस वेबसाइट की जानकारी डॉक्टर से परामर्श का विकल्प नहीं है।",
-    "footer.credit": "वेबसाइट निर्माण: Nitish Gupta · अपने क्लिनिक के लिए ऐसी वेबसाइट चाहिए? <a href=\"https://nitishgupta.pages.dev/\" target=\"_blank\" rel=\"noopener\">अभी संपर्क करें →</a>"
+    "footer.credit": "वेबसाइट निर्माण: <a href=\"https://nitishgupta.pages.dev/\" target=\"_blank\" rel=\"noopener\">Nitish Gupta</a>। क्या आपको भी ऐसी वेबसाइट चाहिए? <a href=\"https://nitishgupta.pages.dev/\" target=\"_blank\" rel=\"noopener\">अभी संपर्क करें</a>"
   };
 
   var UI = {
