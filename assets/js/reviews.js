@@ -6,8 +6,21 @@
  * "Read reviews on Google" / "Write a review" buttons.
  */
 
-// Google profile. Used by the review buttons and "Get directions".
+// Google profile share link. Fallback for the Google buttons when the settings
+// below are empty (it opens the clinic's profile, not the reviews themselves).
 window.GOOGLE_PROFILE_URL = "https://share.google/HjbwcGCvPJSmoIJrW";
+
+// The clinic's Google Place ID (starts with "ChIJ"). With it, "See all reviews"
+// opens the review list, "Write a review" opens the review form and "Get
+// directions" opens Google Maps directions to the clinic. Find it at
+// https://developers.google.com/maps/documentation/places/web-service/place-id
+// (search the clinic's name, pick the right pin, copy the ID).
+window.GOOGLE_PLACE_ID = "";
+
+// Optional: the "Ask for reviews" link from the clinic's Google Business Profile
+// (looks like https://g.page/r/XXXX/review). If set, "Write a review" uses it;
+// it is Google's own link for the review form and the most reliable one.
+window.GOOGLE_REVIEW_FORM_URL = "";
 
 // Overall rating as shown on Google, e.g. { rating: 4.9, count: 37 }.
 // Leave as null to hide the summary badge.

@@ -62,7 +62,7 @@ with a content hash (`styles.css?v=…`) so visitors never get a new page with o
 |---------------------|-------|
 | Add patient reviews | `assets/js/reviews.js` — paste reviews word for word from the Google profile; optional `translation` shows in the other language, labelled "Translated" |
 | Google rating badge | `REVIEW_SUMMARY` in `assets/js/reviews.js` (rating and review count as shown on Google) |
-| Google profile link | `GOOGLE_PROFILE_URL` in `assets/js/reviews.js` (used by the review and directions buttons) |
+| Google buttons      | In `assets/js/reviews.js`: `GOOGLE_PLACE_ID` makes "See all reviews", "Write a review" and "Get directions" open the review list, the review form and Maps directions. `GOOGLE_REVIEW_FORM_URL` (the Business Profile's "Ask for reviews" link) overrides the review form link. Without them, all three fall back to `GOOGLE_PROFILE_URL` |
 | Doctor's photos     | Profile photo (left column): `assets/img/dr-sovran-rai-portrait.jpg` (square, shown as a circle). Link-preview and search image (`og:image`, JSON-LD): `assets/img/dr-sovran-rai-headshot.jpg`. When replacing a photo, use a new file name — `/assets/*` is cached for a day |
 | Change timings      | Hours table in the right column of `index.html` (`#visit`), `SESSIONS` in `assets/js/main.js`, top bar text, the FAQ answer `faq.a2` (English in `index.html`, Hindi in `main.js`), and the JSON-LD block |
 | WhatsApp            | Number: `WHATSAPP_NUMBER` in `assets/js/main.js` and the two `data-wa` links in `index.html` (booking card and phone bar). Pre-filled message: `waText` in the `UI` object in `main.js` (English and Hindi) |
