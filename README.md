@@ -34,7 +34,7 @@ with a content hash (`styles.css?v=…`) so visitors never get a new page with o
 | Add patient reviews | `assets/js/reviews.js` — paste reviews word for word from the Google profile; optional `translation` shows in the other language, labelled "Translated" |
 | Google rating badge | `REVIEW_SUMMARY` in `assets/js/reviews.js` (rating and review count as shown on Google) |
 | Google profile link | `GOOGLE_PROFILE_URL` in `assets/js/reviews.js` (used by the review and directions buttons) |
-| Add doctor's photo  | Save as `assets/img/doctor.jpg`, then follow the comment above `.portrait` in `index.html` |
+| Doctor's photos     | Hero avatar: `assets/img/dr-sovran-rai-portrait.jpg` (square, shown as a circle). Link-preview and search image (`og:image`, JSON-LD): `assets/img/dr-sovran-rai-headshot.jpg`. When replacing a photo, use a new file name — `/assets/*` is cached for a day |
 | Change timings      | Hours table in `index.html` (`#visit`), `SESSIONS` in `assets/js/main.js`, top bar text, and the JSON-LD block |
 | Hindi text          | `HI` object at the top of `assets/js/main.js` (keys match `data-i18n` attributes) |
 
@@ -54,8 +54,12 @@ security headers. Custom domain: the Pages project → Custom domains (e.g. `dr.
 
 ## Sources
 
-Details come from the clinic's signboards, his Arogya Diabetes smartRx clinic poster (photo and diabetes section), timings board, certificates on display, his business card,
+Details come from the clinic's signboards, his Arogya Diabetes smartRx clinic poster (diabetes section), timings board, certificates on display, his business card,
 his Google Business profile (rating, reviews, address) and his Mappls listing (pin, pincode).
+
+A second set of photos from the client (Nov 2026) added his portrait and passport-style headshot, the PHFI / Dr. Mohan's
+diabetes course and EACME cardiology & ECG certificates, and clinic photos taken on 25 Feb 2025 with a GPS-stamp camera app.
+The GPS overlays are cropped out; image metadata is stripped.
 Reviews were copied word for word from Google on 20 Nov 2026; six with written comments are featured,
 and the badge shows Google's overall rating so nothing is hidden.
 
@@ -63,6 +67,9 @@ Deliberately not used: Google's AI Overview text, Justdial's category, and Mappl
 (the clinic's own boards say Mon–Sat 2–5 PM and 6–8 PM).
 
 Still to confirm with the doctor:
+
+- Evening hours: the whiteboard in the clinic (photo of 25 Feb 2025) says 6:00–8:30 PM and token booking 9 AM–8 PM, but the printed banner photographed the same day says 6–8 PM. The site still shows 6–8 PM; if 8:30 is right, update the places listed under "Change timings"
+- Consent from the patient in `assets/img/clinic-consultation.jpg` (About section) — his face is clearly visible. Without it, swap that image back to `clinic-signboard.jpg` or another photo
 
 - Phone numbers 97520 20327 (business card) and 94253 54374 (Mappls) are shown with a "To be confirmed" label. Once confirmed, delete the `<span class="tbc">` next to each number in `index.html` (two in the location section, two in the footer). 81097 70140 is confirmed by the clinic's signboards
 - MBBS college (a directory lists Index Medical College, Indore), MD college, and Junior Resident / Medical Officer posts
