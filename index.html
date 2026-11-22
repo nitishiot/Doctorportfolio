@@ -8,14 +8,14 @@
   <meta name="theme-color" content="#0b3b8c">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Dr. Sovran Rai — MD Medicine, Guna">
-  <meta property="og:description" content="AIIMS Bhopal–trained consultant physician. Mon–Sat 2–5 PM & 6–8:30 PM. Call 81097 70140.">
+  <meta property="og:description" content="AIIMS Bhopal–trained consultant physician. Mon–Sat 2–5 PM & 6–8:30 PM. Call or WhatsApp 81097 70140.">
   <meta property="og:image" content="assets/img/dr-sovran-rai-headshot.jpg">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css?v=36517c25">
+  <link rel="stylesheet" href="assets/css/styles.css?v=3e31d086">
 
   <script type="application/ld+json">
   {
@@ -48,7 +48,7 @@
 
   <!-- ============ Top bar ============ -->
   <div class="topbar">
-    <div class="container topbar__inner">
+    <div class="wrap topbar__inner">
       <span class="topbar__item">
         <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
         <span data-i18n="topbar.hours">Mon–Sat · 2–5 PM &amp; 6–8:30 PM · Sunday closed</span>
@@ -64,143 +64,115 @@
     </div>
   </div>
 
-  <!-- ============ Header ============ -->
-  <header class="header" id="top">
-    <div class="container header__inner">
-      <a class="brand" href="#top" aria-label="Dr. Sovran Rai — home">
-        <span class="brand__mark" aria-hidden="true">SR</span>
-        <span class="brand__text">
-          <span class="brand__name" data-i18n="brand.name">Dr. Sovran Rai</span>
-          <span class="brand__sub" data-i18n="brand.sub">MD Medicine · Consultant Physician</span>
-        </span>
-      </a>
+  <!--
+    Three-column layout
+      Left   (.side--left)  WHO     profile card + "On this page" links
+      Centre (#main)        WHAT    about, treatments, credentials, reviews, gallery, FAQ
+      Right  (#visit)       HOW     call / WhatsApp, timings, address, map
+    Desktop (1200px+): three columns, the side columns stay in view while the page scrolls.
+    Tablet (900–1199px): profile across the top, then content + right column.
+    Phone (under 900px): one column, with a Call / WhatsApp bar fixed to the bottom.
+  -->
+  <div class="wrap layout">
 
-      <nav class="nav" id="nav" aria-label="Main">
-        <a href="#about" data-i18n="nav.about">About</a>
-        <a href="#services" data-i18n="nav.services">Treatments</a>
-        <a href="#education" data-i18n="nav.education">Education</a>
-        <a href="#certificates" data-i18n="nav.certificates">Certificates</a>
-        <a href="#reviews" data-i18n="nav.reviews">Reviews</a>
-        <a href="#visit" data-i18n="nav.visit">Timings &amp; Location</a>
-      </nav>
-
-      <a class="btn btn--primary header__cta" href="tel:+918109770140">
-        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
-        <span data-i18n="cta.callShort">Call to book</span>
-      </a>
-      <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
-
-  <main id="main">
-    <!-- ============ Hero ============ -->
-    <section class="hero">
-      <div class="container hero__grid">
-        <div class="hero__copy">
-          <p class="eyebrow" data-i18n="hero.eyebrow">Consultant Physician · Guna, Madhya Pradesh</p>
-          <h1 class="hero__title">
+    <!-- ============ LEFT: who ============ -->
+    <div class="side side--left">
+      <section class="profile" aria-labelledby="doctorName">
+        <div class="profile__banner" aria-hidden="true"></div>
+        <img class="profile__photo" src="assets/img/dr-sovran-rai-portrait.jpg" width="640" height="640"
+             alt="Dr. Sovran Rai in his consulting room, wearing a stethoscope">
+        <div class="profile__body">
+          <h1 class="profile__name" id="doctorName">
             <span data-i18n="hero.name">Dr. Sovran Rai</span>
-            <span class="hero__title-hi" lang="hi">डॉ. सोवरण राय</span>
+            <span class="profile__name-hi" lang="hi">डॉ. सोवरण राय</span>
           </h1>
-          <p class="hero__creds">
+          <p class="profile__role" data-i18n="hero.eyebrow">Consultant Physician · Guna, Madhya Pradesh</p>
+          <p class="creds">
             <span>MBBS</span><span>MD (Medicine)</span><span class="gold" data-i18n="hero.gold">Gold Medalist</span>
           </p>
-          <p class="hero__lead" data-i18n="hero.lead">AIIMS Bhopal–trained physician, now consulting every day in Guna. Experienced care for heart disease, diabetes, lung, liver, kidney, neurological and skin conditions — under one roof, close to home.</p>
+          <p class="status profile__status js-status" aria-live="polite"></p>
+        </div>
+        <ul class="facts">
+          <li>
+            <span class="facts__k" data-i18n="facts.prev.k">Previously</span>
+            <span class="facts__v" data-i18n="facts.prev.v">AIIMS Bhopal · Greater Kailash Hospital, Indore</span>
+          </li>
+          <li>
+            <span class="facts__k" data-i18n="facts.reg.k">Registration</span>
+            <span class="facts__v">MP17085</span>
+          </li>
+          <li>
+            <span class="facts__k" data-i18n="facts.where.k">Clinic</span>
+            <span class="facts__v" data-i18n="facts.where.v">Kanti Rai Memorial Clinic, Chaudharan Colony, Guna</span>
+          </li>
+        </ul>
+      </section>
 
-          <div class="hero__actions">
-            <a class="btn btn--primary btn--lg" href="tel:+918109770140">
-              <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
-              <span data-i18n="cta.call">Book a token: 81097 70140</span>
-            </a>
-            <a class="btn btn--ghost btn--lg" href="#visit">
-              <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-              <span data-i18n="cta.visit">Timings &amp; directions</span>
-            </a>
+      <nav class="toc" id="toc" aria-labelledby="tocTitle">
+        <p class="toc__title" id="tocTitle" data-i18n="toc.title">On this page</p>
+        <ul class="toc__list">
+          <li><a href="#about" data-i18n="nav.about">About</a></li>
+          <li><a href="#services" data-i18n="nav.services">Treatments</a></li>
+          <li><a href="#diabetes" data-i18n="nav.diabetes">Diabetes clinic</a></li>
+          <li><a href="#education" data-i18n="nav.education">Education</a></li>
+          <li><a href="#certificates" data-i18n="nav.certificates">Certificates</a></li>
+          <li><a href="#reviews" data-i18n="nav.reviews">Reviews</a></li>
+          <li><a href="#gallery" data-i18n="nav.gallery">Gallery</a></li>
+          <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+          <!-- Only shown on phones, where the timings column sits at the end of the page -->
+          <li class="toc__visit"><a href="#visit" data-i18n="nav.visit">Timings &amp; Location</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- ============ CENTRE: what ============ -->
+    <main class="content" id="main">
+
+      <!-- About -->
+      <section class="panel" id="about" aria-labelledby="aboutTitle">
+        <p class="eyebrow" data-i18n="about.eyebrow">About the doctor</p>
+        <h2 id="aboutTitle" data-i18n="about.title">Big-hospital experience, in your own city</h2>
+        <p class="lead" data-i18n="hero.lead">AIIMS Bhopal–trained physician, now consulting every day in Guna. Experienced care for heart disease, diabetes, lung, liver, kidney, neurological and skin conditions — under one roof, close to home.</p>
+
+        <div class="highlights" aria-label="Highlights">
+          <div class="highlight">
+            <svg class="i i--lg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg>
+            <div><strong data-i18n="strip.1.t">Gold Medalist</strong><span data-i18n="strip.1.d">MD in General Medicine</span></div>
           </div>
-
-          <p class="status" id="openStatus" aria-live="polite"></p>
+          <div class="highlight">
+            <svg class="i i--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6M12 8v4M10 10h4"/></svg>
+            <div><strong data-i18n="strip.2.t">Ex-AIIMS Bhopal</strong><span data-i18n="strip.2.d">All India Institute of Medical Sciences</span></div>
+          </div>
+          <div class="highlight">
+            <svg class="i i--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h12v15H6a2 2 0 0 0-2 2 2 2 0 0 0 2 2h12"/><path d="M9 8h5M9 11h5"/></svg>
+            <div><strong data-i18n="strip.3.t">International training</strong><span data-i18n="strip.3.d">Harvard · Johns Hopkins · ADA programs</span></div>
+          </div>
+          <div class="highlight">
+            <svg class="i i--lg" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+            <div><strong data-i18n="strip.4.t">Daily OPD</strong><span data-i18n="strip.4.d">Mon–Sat, plus online consultation</span></div>
+          </div>
         </div>
 
-        <aside class="hero__card" aria-label="Key credentials">
-          <figure class="profile">
-            <div class="profile__banner" aria-hidden="true"></div>
-            <img class="profile__photo" src="assets/img/dr-sovran-rai-portrait.jpg" width="640" height="640"
-                 alt="Dr. Sovran Rai in his consulting room, wearing a stethoscope">
-          </figure>
-          <ul class="facts">
-            <li>
-              <span class="facts__k" data-i18n="facts.degree.k">Qualification</span>
-              <span class="facts__v" data-i18n="facts.degree.v">MBBS, MD (Medicine) — Gold Medalist</span>
-            </li>
-            <li>
-              <span class="facts__k" data-i18n="facts.prev.k">Previously</span>
-              <span class="facts__v" data-i18n="facts.prev.v">AIIMS Bhopal · Greater Kailash Hospital, Indore</span>
-            </li>
-            <li>
-              <span class="facts__k" data-i18n="facts.reg.k">Registration</span>
-              <span class="facts__v">MP17085</span>
-            </li>
-            <li>
-              <span class="facts__k" data-i18n="facts.where.k">Clinic</span>
-              <span class="facts__v" data-i18n="facts.where.v">Kanti Rai Memorial Clinic, Chaudharan Colony, Guna</span>
-            </li>
-          </ul>
-        </aside>
-      </div>
-    </section>
+        <figure class="photo">
+          <img src="assets/img/clinic-consultation.jpg" width="1200" height="900"
+               alt="Dr. Sovran Rai, stethoscope around his neck, checking a patient's pulse at his desk in the clinic">
+          <figcaption data-i18n="about.caption">Consulting at Kanti Rai Memorial Clinic, Guna</figcaption>
+        </figure>
 
-    <!-- ============ Trust strip ============ -->
-    <section class="strip" aria-label="Highlights">
-      <div class="container strip__grid">
-        <div class="strip__item">
-          <svg class="i i--lg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg>
-          <div><strong data-i18n="strip.1.t">Gold Medalist</strong><span data-i18n="strip.1.d">MD in General Medicine</span></div>
-        </div>
-        <div class="strip__item">
-          <svg class="i i--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6M12 8v4M10 10h4"/></svg>
-          <div><strong data-i18n="strip.2.t">Ex-AIIMS Bhopal</strong><span data-i18n="strip.2.d">All India Institute of Medical Sciences</span></div>
-        </div>
-        <div class="strip__item">
-          <svg class="i i--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h12v15H6a2 2 0 0 0-2 2 2 2 0 0 0 2 2h12"/><path d="M9 8h5M9 11h5"/></svg>
-          <div><strong data-i18n="strip.3.t">International training</strong><span data-i18n="strip.3.d">Harvard · Johns Hopkins · ADA programs</span></div>
-        </div>
-        <div class="strip__item">
-          <svg class="i i--lg" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
-          <div><strong data-i18n="strip.4.t">Daily OPD</strong><span data-i18n="strip.4.d">Mon–Sat, plus online consultation</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ About ============ -->
-    <section class="section" id="about">
-      <div class="container about">
-        <div class="about__media">
-          <figure class="photo">
-            <img src="assets/img/clinic-consultation.jpg" width="1200" height="900" loading="lazy"
-                 alt="Dr. Sovran Rai, stethoscope around his neck, checking a patient's pulse at his desk in the clinic">
-            <figcaption data-i18n="about.caption">Consulting at Kanti Rai Memorial Clinic, Guna</figcaption>
-          </figure>
-        </div>
-        <div class="about__copy">
-          <p class="eyebrow" data-i18n="about.eyebrow">About the doctor</p>
-          <h2 data-i18n="about.title">Big-hospital experience, in your own city</h2>
+        <div class="prose">
           <p data-i18n="about.p1">Dr. Sovran Rai is a consultant physician holding an MBBS and an MD in Medicine, where he graduated as a gold medalist. Before starting his practice in Guna he served as a physician at the All India Institute of Medical Sciences (AIIMS), Bhopal, and at Greater Kailash Hospital, Indore.</p>
           <p data-i18n="about.p2">As an internal-medicine specialist he looks after the whole patient — from long-term conditions like diabetes, blood pressure and thyroid disorders, to heart and lung disease, fevers, and problems of the liver, kidneys, nerves and skin.</p>
           <p data-i18n="about.p3">During the COVID-19 pandemic he completed additional training in mechanical ventilation (Harvard Medical School) and contact tracing (Johns Hopkins University), and was honoured locally as a Corona Warrior. He has since completed courses in advanced cardiology and ECG (2020–21) and in evidence-based diabetes management from the Public Health Foundation of India and Dr. Mohan's Diabetes Education Academy (2022). He has also received the Patrika Achiever Award 2022 for his contribution to government service.</p>
           <a class="link-arrow" href="#education" data-i18n="about.more">See education &amp; experience →</a>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ============ Services ============ -->
-    <section class="section section--tint" id="services">
-      <div class="container">
-        <header class="section__head">
+      <!-- Treatments -->
+      <section class="panel" id="services" aria-labelledby="servicesTitle">
+        <header class="panel__head">
           <p class="eyebrow" data-i18n="services.eyebrow">What we treat</p>
-          <h2 data-i18n="services.title">Conditions &amp; treatments</h2>
-          <p class="section__lead" data-i18n="services.lead">Diagnosis, treatment and long-term follow-up for adults across the full range of general medicine.</p>
+          <h2 id="servicesTitle" data-i18n="services.title">Conditions &amp; treatments</h2>
+          <p class="panel__lead" data-i18n="services.lead">Diagnosis, treatment and long-term follow-up for adults across the full range of general medicine.</p>
         </header>
 
         <div class="cards">
@@ -246,54 +218,52 @@
             <p data-i18n="svc.pain.d">Medical management of back pain, neck pain and related nerve symptoms.</p>
           </article>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ============ Diabetes care ============ -->
-    <section class="section diabetes" id="diabetes">
-      <div class="container diabetes__grid">
-        <div class="diabetes__copy">
-          <p class="eyebrow" data-i18n="dm.eyebrow">Diabetes clinic</p>
-          <h2 data-i18n="dm.title">Your partner in diabetes care</h2>
-          <p class="section__lead" data-i18n="dm.lead">Dr. Sovran Rai's clinic is part of the Arogya Diabetes smartRx programme, offering ongoing diabetes care right here in Guna.</p>
-          <ul class="checks">
-            <li data-i18n="dm.cert">Care from a doctor certified in evidence-based diabetes management (PHFI &amp; Dr. Mohan's Diabetes Education Academy)</li>
-            <li data-i18n="dm.c1">Diagnosis and long-term treatment of type 2 diabetes</li>
-            <li data-i18n="dm.c2">Diabetes risk score check</li>
-            <li data-i18n="dm.c3">Customised diet plans through the Arogya Diabetes smartRx programme</li>
-            <li data-i18n="dm.c4">Regular follow-up of blood sugar, blood pressure and thyroid</li>
-          </ul>
-          <a class="btn btn--primary" href="tel:+918109770140">
-            <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
-            <span data-i18n="dm.cta">Book a diabetes check-up</span>
-          </a>
-        </div>
-        <aside class="diabetes__stat" aria-label="Diabetes fact">
-          <p class="diabetes__q" data-i18n="dm.q">Are you at risk of type 2 diabetes?</p>
-          <p class="diabetes__pre" data-i18n="dm.pre">About</p>
-          <p class="diabetes__big" data-i18n="dm.big">1 in 2</p>
-          <p class="diabetes__text" data-i18n="dm.text">people with diabetes don't know they have it.</p>
-          <p class="diabetes__small" data-i18n="dm.small">Diabetes is easier to control when it's found early.</p>
-          <div class="risk">
-            <a class="risk__qr" href="https://rxguide.in/a/3497" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-              <img src="assets/img/diabetes-risk-qr.svg" width="104" height="104" alt="">
+      <!-- Diabetes clinic -->
+      <section class="panel panel--diabetes" id="diabetes" aria-labelledby="dmTitle">
+        <div class="diabetes">
+          <div class="diabetes__copy">
+            <p class="eyebrow" data-i18n="dm.eyebrow">Diabetes clinic</p>
+            <h2 id="dmTitle" data-i18n="dm.title">Your partner in diabetes care</h2>
+            <p class="panel__lead" data-i18n="dm.lead">Dr. Sovran Rai's clinic is part of the Arogya Diabetes smartRx programme, offering ongoing diabetes care right here in Guna.</p>
+            <ul class="checks">
+              <li data-i18n="dm.cert">Care from a doctor certified in evidence-based diabetes management (PHFI &amp; Dr. Mohan's Diabetes Education Academy)</li>
+              <li data-i18n="dm.c1">Diagnosis and long-term treatment of type 2 diabetes</li>
+              <li data-i18n="dm.c2">Diabetes risk score check</li>
+              <li data-i18n="dm.c3">Customised diet plans through the Arogya Diabetes smartRx programme</li>
+              <li data-i18n="dm.c4">Regular follow-up of blood sugar, blood pressure and thyroid</li>
+            </ul>
+            <a class="btn btn--primary" href="tel:+918109770140">
+              <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+              <span data-i18n="dm.cta">Book a diabetes check-up</span>
             </a>
-            <div class="risk__text">
-              <p class="risk__title" data-i18n="dm.risk.t">Know your diabetes risk score</p>
-              <p data-i18n="dm.risk.d">Scan this QR code with your phone camera. You can also get customised diet plans for your diabetes care.</p>
-              <a class="risk__link" href="https://rxguide.in/a/3497" target="_blank" rel="noopener" data-i18n="dm.risk.link">Open the risk check (rxguide.in) →</a>
-            </div>
           </div>
-        </aside>
-      </div>
-    </section>
+          <aside class="diabetes__stat" aria-label="Diabetes fact">
+            <p class="diabetes__q" data-i18n="dm.q">Are you at risk of type 2 diabetes?</p>
+            <p class="diabetes__pre" data-i18n="dm.pre">About</p>
+            <p class="diabetes__big" data-i18n="dm.big">1 in 2</p>
+            <p class="diabetes__text" data-i18n="dm.text">people with diabetes don't know they have it.</p>
+            <p class="diabetes__small" data-i18n="dm.small">Diabetes is easier to control when it's found early.</p>
+            <div class="risk">
+              <a class="risk__qr" href="https://rxguide.in/a/3497" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+                <img src="assets/img/diabetes-risk-qr.svg" width="104" height="104" alt="">
+              </a>
+              <div class="risk__text">
+                <p class="risk__title" data-i18n="dm.risk.t">Know your diabetes risk score</p>
+                <p data-i18n="dm.risk.d">Scan this QR code with your phone camera. You can also get customised diet plans for your diabetes care.</p>
+                <a class="risk__link" href="https://rxguide.in/a/3497" target="_blank" rel="noopener" data-i18n="dm.risk.link">Open the risk check (rxguide.in) →</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
 
-    <!-- ============ Education & experience ============ -->
-    <section class="section" id="education">
-      <div class="container">
-        <header class="section__head">
+      <!-- Education & experience -->
+      <section class="panel" id="education" aria-labelledby="eduTitle">
+        <header class="panel__head">
           <p class="eyebrow" data-i18n="edu.eyebrow">Credentials</p>
-          <h2 data-i18n="edu.title">Education &amp; experience</h2>
+          <h2 id="eduTitle" data-i18n="edu.title">Education &amp; experience</h2>
         </header>
 
         <div class="cols">
@@ -334,15 +304,13 @@
             </ol>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ============ Certificates & awards ============ -->
-    <section class="section section--tint" id="certificates">
-      <div class="container">
-        <header class="section__head">
+      <!-- Certificates & honours -->
+      <section class="panel" id="certificates" aria-labelledby="certTitle">
+        <header class="panel__head">
           <p class="eyebrow" data-i18n="cert.eyebrow">Continuing education &amp; recognition</p>
-          <h2 data-i18n="cert.title">Certificates &amp; honours</h2>
+          <h2 id="certTitle" data-i18n="cert.title">Certificates &amp; honours</h2>
         </header>
 
         <h3 class="col__title" data-i18n="cert.sub1">Certifications</h3>
@@ -429,16 +397,14 @@
             </figcaption>
           </figure>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ============ Reviews ============ -->
-    <section class="section" id="reviews">
-      <div class="container">
-        <header class="section__head">
+      <!-- Reviews -->
+      <section class="panel" id="reviews" aria-labelledby="revTitle">
+        <header class="panel__head">
           <p class="eyebrow" data-i18n="rev.eyebrow">Patient feedback</p>
-          <h2 data-i18n="rev.title">What patients say</h2>
-          <p class="section__lead" data-i18n="rev.lead">Selected reviews from patients on Google. Read them all, or share your own experience.</p>
+          <h2 id="revTitle" data-i18n="rev.title">What patients say</h2>
+          <p class="panel__lead" data-i18n="rev.lead">Selected reviews from patients on Google. Read them all, or share your own experience.</p>
         </header>
 
         <!-- Rating summary and reviews are rendered from assets/js/reviews.js -->
@@ -455,97 +421,13 @@
             <span data-i18n="rev.write">Write a review</span>
           </a>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ============ Visit ============ -->
-    <section class="section section--dark" id="visit">
-      <div class="container visit">
-        <div class="visit__info">
-          <p class="eyebrow eyebrow--light" data-i18n="visit.eyebrow">Visit the clinic</p>
-          <h2 data-i18n="visit.title">Timings &amp; location</h2>
-
-          <table class="hours" aria-label="Consultation hours">
-            <tbody>
-              <tr data-days="1-6">
-                <th scope="row" data-i18n="visit.days">Monday – Saturday</th>
-                <td>
-                  <span data-i18n="visit.noon">Afternoon: 2:00 – 5:00 PM</span><br>
-                  <span data-i18n="visit.eve">Evening: 6:00 – 8:30 PM</span>
-                </td>
-              </tr>
-              <tr data-days="0">
-                <th scope="row" data-i18n="visit.sun">Sunday</th>
-                <td data-i18n="visit.closed">Closed</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <div class="note">
-            <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
-            <p data-i18n="visit.note">Please register in advance by phone to avoid waiting. Call <a href="tel:+918109770140">81097 70140</a> between 9 AM and 8 PM to book your token number.</p>
-          </div>
-
-          <div class="note">
-            <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="m16 10 5-3v10l-5-3"/></svg>
-            <p data-i18n="visit.online">Can't come to the clinic? Online consultation is also available. Call <a href="tel:+918109770140">81097 70140</a> to arrange one.</p>
-          </div>
-
-          <address class="addr">
-            <strong data-i18n="visit.addrTitle">Kanti Rai Memorial Clinic</strong>
-            <span data-i18n="visit.addr">Indira Nandan Niwas, Aashirwad Hospital Road, Chaudharan Colony (Laxmi Ganj), near Goyal Bhawan and Dr. Kanti Sharma, Guna, Madhya Pradesh 473001</span>
-            <!-- Remove each "To be confirmed" label once the doctor confirms that number. -->
-            <ul class="phones">
-              <li>
-                <a href="tel:+918109770140"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>81097 70140</a>
-                <span class="phones__note" data-i18n="phone.main">Appointments &amp; token booking</span>
-              </li>
-              <li>
-                <a href="tel:+919752020327"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>97520 20327</a>
-                <span class="phones__note" data-i18n="phone.alt">Alternate number</span>
-                <span class="tbc" data-i18n="tbc">To be confirmed</span>
-              </li>
-              <li>
-                <a href="tel:+919425354374"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>94253 54374</a>
-                <span class="phones__note" data-i18n="phone.alt">Alternate number</span>
-                <span class="tbc" data-i18n="tbc">To be confirmed</span>
-              </li>
-            </ul>
-            <a class="addr__email" href="mailto:dr.sovranrai@gmail.com">
-              <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-              dr.sovranrai@gmail.com
-            </a>
-          </address>
-
-          <div class="visit__actions">
-            <a class="btn btn--light" href="tel:+918109770140">
-              <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
-              81097 70140
-            </a>
-            <a class="btn btn--outline-light" href="https://share.google/HjbwcGCvPJSmoIJrW" data-google-link target="_blank" rel="noopener">
-              <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-              <span data-i18n="visit.directions">Get directions</span>
-            </a>
-            <a class="btn btn--outline-light" href="https://mappls.com/hk2vr5" target="_blank" rel="noopener">
-              <span data-i18n="visit.mappls">Open in Mappls</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="visit__map">
-          <iframe title="Map showing Chaudharan Colony, Guna"
-                  src="https://maps.google.com/maps?q=Aashirwad%20Hospital%20Road%2C%20Chaudharan%20Colony%2C%20Guna%2C%20Madhya%20Pradesh&z=15&output=embed"
-                  loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ Gallery ============ -->
-    <section class="section" id="gallery">
-      <div class="container">
-        <header class="section__head">
+      <!-- Gallery -->
+      <section class="panel" id="gallery" aria-labelledby="galTitle">
+        <header class="panel__head">
           <p class="eyebrow" data-i18n="gal.eyebrow">Gallery</p>
-          <h2 data-i18n="gal.title">At the clinic</h2>
+          <h2 id="galTitle" data-i18n="gal.title">At the clinic</h2>
         </header>
         <div class="gallery">
           <a href="assets/img/clinic-consulting-room.jpg" class="gallery__item">
@@ -576,13 +458,150 @@
             <img src="assets/img/timings-board.jpg" width="900" height="1200" loading="lazy" alt="Handwritten board with consultation timings and booking number">
           </a>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
+
+      <!-- FAQ: every answer restates facts shown elsewhere on this page -->
+      <section class="panel" id="faq" aria-labelledby="faqTitle">
+        <header class="panel__head">
+          <p class="eyebrow" data-i18n="faq.eyebrow">Before you visit</p>
+          <h2 id="faqTitle" data-i18n="faq.title">Frequently asked questions</h2>
+        </header>
+        <div class="faq">
+          <details class="faq__item">
+            <summary data-i18n="faq.q1">How do I book an appointment?</summary>
+            <p data-i18n="faq.a1">Call <a href="tel:+918109770140">81097 70140</a> between 9 AM and 8 PM to book your token number, or send a WhatsApp message to the same number. Booking in advance helps you avoid waiting at the clinic.</p>
+          </details>
+          <details class="faq__item">
+            <summary data-i18n="faq.q2">What are the consultation timings?</summary>
+            <p data-i18n="faq.a2">Monday to Saturday, 2:00 – 5:00 PM and 6:00 – 8:30 PM. The clinic is closed on Sunday.</p>
+          </details>
+          <details class="faq__item">
+            <summary data-i18n="faq.q3">Is online consultation available?</summary>
+            <p data-i18n="faq.a3">Yes. If you can't come to the clinic, call <a href="tel:+918109770140">81097 70140</a> to arrange an online consultation.</p>
+          </details>
+          <details class="faq__item">
+            <summary data-i18n="faq.q4">Where is the clinic?</summary>
+            <p data-i18n="faq.a4">Kanti Rai Memorial Clinic, Indira Nandan Niwas, Aashirwad Hospital Road, Chaudharan Colony (Laxmi Ganj), near Goyal Bhawan, Guna, Madhya Pradesh 473001.</p>
+          </details>
+          <details class="faq__item">
+            <summary data-i18n="faq.q5">Which conditions does Dr. Sovran Rai treat?</summary>
+            <p data-i18n="faq.a5">As a consultant physician (MD Medicine) he treats adults across general medicine — diabetes, blood pressure and thyroid disorders, heart and lung disease, fevers and infections, and conditions of the liver, kidneys, brain and nerves, and skin.</p>
+          </details>
+          <details class="faq__item">
+            <summary data-i18n="faq.q6">What should I do in an emergency?</summary>
+            <p data-i18n="faq.a6">This clinic is an outpatient practice. For a medical emergency call 108 or go to the nearest hospital.</p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ RIGHT: how to reach ============ -->
+    <aside class="side side--right" id="visit" aria-labelledby="visitTitle">
+      <h2 class="sr-only" id="visitTitle" data-i18n="visit.title">Timings &amp; location</h2>
+
+      <!-- Book -->
+      <section class="book" aria-labelledby="bookTitle">
+        <p class="eyebrow eyebrow--light" data-i18n="book.eyebrow">Appointments</p>
+        <h3 class="book__title" id="bookTitle" data-i18n="book.title">Book a token</h3>
+        <p class="status status--dark js-status" aria-live="polite"></p>
+        <div class="book__actions">
+          <a class="btn btn--light btn--block" href="tel:+918109770140">
+            <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+            <span data-i18n="cta.callNum">Call 81097 70140</span>
+          </a>
+          <a class="btn btn--wa btn--block" href="https://wa.me/918109770140?text=Hello%20Doctor%2C%20I%20would%20like%20to%20book%20a%20token%20for%20a%20consultation." data-wa target="_blank" rel="noopener">
+            <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.49 16.46A8.5 8.5 0 1 1 8.41 18.7L4 20z"/><path class="i__fine" d="M9.4 7.6h1.6l.8 2-1 .6a4.4 4.4 0 0 0 2 2l.6-1 2 .8v1.6a.8.8 0 0 1-.8.8A6.4 6.4 0 0 1 8.6 8.4a.8.8 0 0 1 .8-.8"/></svg>
+            <span data-i18n="cta.waLong">Message on WhatsApp</span>
+          </a>
+        </div>
+        <div class="book__notes">
+          <p class="book__note">
+            <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+            <span data-i18n="visit.note">Please register in advance by phone to avoid waiting. Call <a href="tel:+918109770140">81097 70140</a> between 9 AM and 8 PM to book your token number.</span>
+          </p>
+          <p class="book__note">
+            <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="m16 10 5-3v10l-5-3"/></svg>
+            <span data-i18n="visit.online">Can't come to the clinic? Online consultation is also available. Call <a href="tel:+918109770140">81097 70140</a> to arrange one.</span>
+          </p>
+        </div>
+      </section>
+
+      <!-- Hours -->
+      <section class="side-card side-card--hours" aria-labelledby="hoursTitle">
+        <h3 class="side-card__title" id="hoursTitle" data-i18n="side.hours">Consultation hours</h3>
+        <table class="hours">
+          <tbody>
+            <tr data-days="1-6">
+              <th scope="row" data-i18n="visit.days">Monday – Saturday</th>
+              <td>
+                <span data-i18n="visit.noon">Afternoon: 2:00 – 5:00 PM</span><br>
+                <span data-i18n="visit.eve">Evening: 6:00 – 8:30 PM</span>
+              </td>
+            </tr>
+            <tr data-days="0">
+              <th scope="row" data-i18n="visit.sun">Sunday</th>
+              <td data-i18n="visit.closed">Closed</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Clinic: address, map, phones -->
+      <section class="side-card side-card--clinic" aria-labelledby="clinicTitle">
+        <h3 class="side-card__title" id="clinicTitle" data-i18n="visit.addrTitle">Kanti Rai Memorial Clinic</h3>
+        <address class="addr" data-i18n="visit.addr">Indira Nandan Niwas, Aashirwad Hospital Road, Chaudharan Colony (Laxmi Ganj), near Goyal Bhawan and Dr. Kanti Sharma, Guna, Madhya Pradesh 473001</address>
+        <div class="map">
+          <iframe title="Map showing Chaudharan Colony, Guna"
+                  src="https://maps.google.com/maps?q=Aashirwad%20Hospital%20Road%2C%20Chaudharan%20Colony%2C%20Guna%2C%20Madhya%20Pradesh&z=15&output=embed"
+                  loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="map__actions">
+          <a class="btn btn--ghost btn--sm" href="https://share.google/HjbwcGCvPJSmoIJrW" data-google-link target="_blank" rel="noopener">
+            <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <span data-i18n="visit.directions">Get directions</span>
+          </a>
+          <a class="btn btn--ghost btn--sm" href="https://mappls.com/hk2vr5" target="_blank" rel="noopener">
+            <span data-i18n="visit.mappls">Open in Mappls</span>
+          </a>
+        </div>
+
+        <h4 class="side-card__sub" data-i18n="footer.contact">Contact</h4>
+        <!-- Remove each "To be confirmed" label once the doctor confirms that number. -->
+        <ul class="phones">
+          <li>
+            <a href="tel:+918109770140"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>81097 70140</a>
+            <span class="phones__note" data-i18n="phone.main">Appointments &amp; token booking</span>
+          </li>
+          <li>
+            <a href="tel:+919752020327"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>97520 20327</a>
+            <span class="phones__note" data-i18n="phone.alt">Alternate number</span>
+            <span class="tbc" data-i18n="tbc">To be confirmed</span>
+          </li>
+          <li>
+            <a href="tel:+919425354374"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>94253 54374</a>
+            <span class="phones__note" data-i18n="phone.alt">Alternate number</span>
+            <span class="tbc" data-i18n="tbc">To be confirmed</span>
+          </li>
+          <li>
+            <a href="mailto:dr.sovranrai@gmail.com"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>dr.sovranrai@gmail.com</a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Emergency -->
+      <section class="side-card side-card--alert" aria-labelledby="emergencyTitle">
+        <h3 class="side-card__title" id="emergencyTitle">
+          <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 20h20L12 3z"/><path d="M12 10v4M12 17h.01"/></svg>
+          <span data-i18n="footer.emergency.t">Emergency?</span>
+        </h3>
+        <p data-i18n="footer.emergency.d">This clinic is an outpatient practice. For a medical emergency call 108 or go to the nearest hospital.</p>
+      </section>
+    </aside>
+  </div>
 
   <!-- ============ Footer ============ -->
   <footer class="footer">
-    <div class="container footer__grid">
+    <div class="wrap footer__grid">
       <div>
         <p class="footer__name" data-i18n="brand.name">Dr. Sovran Rai</p>
         <p data-i18n="footer.creds">MBBS, MD (Medicine) — Gold Medalist · Reg. No. MP17085</p>
@@ -596,23 +615,30 @@
         <p><a href="mailto:dr.sovranrai@gmail.com">dr.sovranrai@gmail.com</a></p>
         <p data-i18n="footer.addr">Kanti Rai Memorial Clinic, Indira Nandan Niwas, Chaudharan Colony, Guna (M.P.) 473001</p>
       </div>
-      <div>
+      <!-- Hidden on phones, where the emergency card sits just above the footer -->
+      <div class="footer__emergency">
         <p class="footer__h" data-i18n="footer.emergency.t">Emergency?</p>
         <p data-i18n="footer.emergency.d">This clinic is an outpatient practice. For a medical emergency call 108 or go to the nearest hospital.</p>
       </div>
     </div>
-    <div class="container footer__bottom">
+    <div class="wrap footer__bottom">
       <p>© <span id="year">2026</span> Dr. Sovran Rai. <span data-i18n="footer.disclaimer">Information on this site is not a substitute for a consultation.</span></p>
     </div>
   </footer>
 
-  <!-- Floating call button on mobile -->
-  <a class="fab" href="tel:+918109770140" aria-label="Call 81097 70140">
-    <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
-    <span data-i18n="cta.callShort">Call to book</span>
-  </a>
+  <!-- Call / WhatsApp bar fixed to the bottom on phones -->
+  <div class="actionbar">
+    <a class="btn btn--primary" href="tel:+918109770140" aria-label="Call 81097 70140">
+      <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+      <span data-i18n="cta.callShort">Call to book</span>
+    </a>
+    <a class="btn btn--wa" href="https://wa.me/918109770140?text=Hello%20Doctor%2C%20I%20would%20like%20to%20book%20a%20token%20for%20a%20consultation." data-wa target="_blank" rel="noopener">
+      <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.49 16.46A8.5 8.5 0 1 1 8.41 18.7L4 20z"/><path class="i__fine" d="M9.4 7.6h1.6l.8 2-1 .6a4.4 4.4 0 0 0 2 2l.6-1 2 .8v1.6a.8.8 0 0 1-.8.8A6.4 6.4 0 0 1 8.6 8.4a.8.8 0 0 1 .8-.8"/></svg>
+      <span data-i18n="cta.wa">WhatsApp</span>
+    </a>
+  </div>
 
   <script src="assets/js/reviews.js?v=b0812d43"></script>
-  <script src="assets/js/main.js?v=4b9f9a8e"></script>
+  <script src="assets/js/main.js?v=6f1687bb"></script>
 </body>
 </html>

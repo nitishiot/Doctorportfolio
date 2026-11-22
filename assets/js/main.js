@@ -11,26 +11,32 @@
     "topbar.loc": "चौधरन कॉलोनी, गुना (म.प्र.)",
 
     "brand.name": "डॉ. सोवरण राय",
-    "brand.sub": "एम.डी. मेडिसिन · परामर्श चिकित्सक",
 
+    "toc.title": "इस पेज पर",
     "nav.about": "परिचय",
     "nav.services": "इलाज",
+    "nav.diabetes": "डायबिटीज़ क्लिनिक",
     "nav.education": "शिक्षा",
     "nav.certificates": "प्रमाण-पत्र",
     "nav.reviews": "समीक्षाएँ",
+    "nav.gallery": "गैलरी",
+    "nav.faq": "सवाल-जवाब",
     "nav.visit": "समय व पता",
 
     "cta.callShort": "कॉल करें",
-    "cta.call": "नंबर लगाएँ: 81097 70140",
-    "cta.visit": "समय व रास्ता",
+    "cta.callNum": "कॉल करें: 81097 70140",
+    "cta.wa": "व्हाट्सऐप",
+    "cta.waLong": "व्हाट्सऐप पर संदेश भेजें",
+
+    "book.eyebrow": "अपॉइंटमेंट",
+    "book.title": "नंबर लगवाएँ",
+    "side.hours": "परामर्श का समय",
 
     "hero.eyebrow": "परामर्श चिकित्सक · गुना, मध्य प्रदेश",
     "hero.name": "डॉ. सोवरण राय",
     "hero.gold": "गोल्ड मेडलिस्ट",
     "hero.lead": "एम्स भोपाल से प्रशिक्षित चिकित्सक, अब आपके शहर गुना में प्रतिदिन परामर्श हेतु उपलब्ध। हृदय रोग, डायबिटीज़, फेफड़े, लीवर, किडनी, मस्तिष्क व नसों तथा चर्म रोगों का अनुभवी इलाज — एक ही जगह, आपके घर के पास।",
 
-    "facts.degree.k": "योग्यता",
-    "facts.degree.v": "एम.बी.बी.एस., एम.डी. (मेडिसिन) — गोल्ड मेडलिस्ट",
     "facts.prev.k": "पूर्व चिकित्सक",
     "facts.prev.v": "एम्स भोपाल · ग्रेटर कैलाश हॉस्पिटल, इन्दौर",
     "facts.reg.k": "पंजीयन क्रमांक",
@@ -147,7 +153,6 @@
     "rev.asof": "रेटिंग व समीक्षाएँ Google के अनुसार, नवंबर 2026। अंग्रेज़ी समीक्षाओं का हिंदी अनुवाद दिया गया है।",
     "rev.write": "समीक्षा लिखें",
 
-    "visit.eyebrow": "क्लिनिक आएँ",
     "visit.title": "मिलने का समय व पता",
     "visit.days": "सोमवार – शनिवार",
     "visit.noon": "दोपहर: 2:00 – 5:00 बजे",
@@ -168,6 +173,21 @@
     "gal.eyebrow": "गैलरी",
     "gal.title": "क्लिनिक की झलक",
 
+    "faq.eyebrow": "आने से पहले",
+    "faq.title": "अक्सर पूछे जाने वाले सवाल",
+    "faq.q1": "अपॉइंटमेंट कैसे लें?",
+    "faq.a1": "नंबर लगाने के लिए सुबह 9 से रात 8 बजे के बीच <a href=\"tel:+918109770140\">81097 70140</a> पर कॉल करें, या इसी नंबर पर व्हाट्सऐप संदेश भेजें। पहले से नंबर लगाने पर क्लिनिक में इंतज़ार नहीं करना पड़ता।",
+    "faq.q2": "परामर्श का समय क्या है?",
+    "faq.a2": "सोमवार से शनिवार, दोपहर 2:00 – 5:00 बजे और शाम 6:00 – 8:30 बजे। रविवार को क्लिनिक बंद रहता है।",
+    "faq.q3": "क्या ऑनलाइन परामर्श उपलब्ध है?",
+    "faq.a3": "हाँ। अगर आप क्लिनिक नहीं आ सकते, तो ऑनलाइन परामर्श की व्यवस्था के लिए <a href=\"tel:+918109770140\">81097 70140</a> पर कॉल करें।",
+    "faq.q4": "क्लिनिक कहाँ है?",
+    "faq.a4": "कान्ती राय मेमोरियल क्लिनिक, इन्दिरा नंदन निवास, आशीर्वाद हॉस्पिटल रोड, चौधरन कॉलोनी (लक्ष्मी गंज), गोयल भवन के पास, गुना, मध्य प्रदेश 473001।",
+    "faq.q5": "डॉ. सोवरण राय किन रोगों का इलाज करते हैं?",
+    "faq.a5": "परामर्श चिकित्सक (एम.डी. मेडिसिन) के रूप में वे वयस्कों में जनरल मेडिसिन के रोगों का इलाज करते हैं — डायबिटीज़, ब्लड प्रेशर व थायरॉइड, हृदय व फेफड़ों के रोग, बुखार व संक्रमण, तथा लीवर, किडनी, मस्तिष्क व नसों और त्वचा के रोग।",
+    "faq.q6": "आपातकाल में क्या करें?",
+    "faq.a6": "यह ओ.पी.डी. क्लिनिक है। चिकित्सीय आपातकाल में 108 पर कॉल करें या नज़दीकी अस्पताल जाएँ।",
+
     "footer.creds": "एम.बी.बी.एस., एम.डी. (मेडिसिन) — गोल्ड मेडलिस्ट · पंजीयन क्र. MP17085",
     "footer.prev": "पूर्व चिकित्सक — एम्स भोपाल एवं ग्रेटर कैलाश हॉस्पिटल, इन्दौर",
     "footer.contact": "संपर्क",
@@ -184,7 +204,8 @@
       opensTomorrow: "Closed now · opens {d} at 2:00 PM",
       today: "Today",
       langLabel: "Switch language to Hindi",
-      title: "Dr. Sovran Rai — MD Medicine, Consultant Physician in Guna"
+      title: "Dr. Sovran Rai — MD Medicine, Consultant Physician in Guna",
+      waText: "Hello Doctor, I would like to book a token for a consultation."
     },
     hi: {
       openNow: "अभी खुला है · {t} तक",
@@ -192,9 +213,13 @@
       opensTomorrow: "अभी बंद है · {d} दोपहर 2:00 बजे से खुलेगा",
       today: "आज",
       langLabel: "भाषा अंग्रेज़ी में बदलें",
-      title: "डॉ. सोवरण राय — एम.डी. मेडिसिन, परामर्श चिकित्सक, गुना"
+      title: "डॉ. सोवरण राय — एम.डी. मेडिसिन, परामर्श चिकित्सक, गुना",
+      waText: "नमस्ते डॉक्टर साहब, मुझे परामर्श के लिए नंबर लगवाना है।"
     }
   };
+
+  // WhatsApp chats open with a ready-to-send message in the visitor's language.
+  var WHATSAPP_NUMBER = "918109770140";
   var DAYS = {
     en: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
     hi: ["रविवार", "सोमवार", "मंगलवार", "बुधवार", "गुरुवार", "शुक्रवार", "शनिवार"]
@@ -222,6 +247,8 @@
     var toggle = document.getElementById("langToggle");
     if (toggle) toggle.setAttribute("aria-label", UI[lang].langLabel);
     storageSet("lang", lang);
+    updatePinned();   // Hindi text is taller, so re-check whether the left column fits
+    updateWhatsApp();
     updateStatus();
     renderReviews();
   }
@@ -230,37 +257,69 @@
     setLang(lang === "en" ? "hi" : "en");
   });
 
-  /* ---------------- Mobile nav ---------------- */
-  var navToggle = document.getElementById("navToggle");
-  var nav = document.getElementById("nav");
-  navToggle.addEventListener("click", function () {
-    var open = nav.classList.toggle("is-open");
-    navToggle.setAttribute("aria-expanded", String(open));
-  });
-  nav.addEventListener("click", function (e) {
-    if (e.target.closest("a")) {
-      nav.classList.remove("is-open");
-      navToggle.setAttribute("aria-expanded", "false");
-    }
-  });
-
-  /* ---------------- Active nav link on scroll ---------------- */
-  if ("IntersectionObserver" in window) {
-    var links = {};
-    nav.querySelectorAll("a[href^='#']").forEach(function (a) { links[a.getAttribute("href").slice(1)] = a; });
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (en.isIntersecting && links[en.target.id]) {
-          Object.keys(links).forEach(function (k) { links[k].classList.remove("is-active"); });
-          links[en.target.id].classList.add("is-active");
-        }
-      });
-    }, { rootMargin: "-45% 0px -50% 0px" });
-    Object.keys(links).forEach(function (id) {
-      var s = document.getElementById(id);
-      if (s) io.observe(s);
-    });
+  function updateWhatsApp() {
+    var href = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(UI[lang].waText);
+    document.querySelectorAll("[data-wa]").forEach(function (a) { a.href = href; });
   }
+
+  /* ---------------- "On this page" links: highlight the current section ----------------
+   * A section is current once its top passes 35% of the way down the window.
+   * Links hidden at this screen size (e.g. "Timings & location" on desktop, where
+   * that column is always visible) are skipped.
+   */
+  var toc = document.getElementById("toc");
+  var tocList = toc.querySelector(".toc__list");
+  var tocLinks = Array.prototype.slice.call(toc.querySelectorAll("a[href^='#']"));
+  var activeLink = null;
+
+  function updateActiveLink() {
+    var line = window.innerHeight * 0.35;
+    var atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+    var current = null;
+    tocLinks.forEach(function (a) {
+      if (!a.offsetParent) return; // hidden at this size
+      var section = document.getElementById(a.getAttribute("href").slice(1));
+      if (!section) return;
+      if (atBottom || section.getBoundingClientRect().top <= line) current = a;
+    });
+    if (current === activeLink) return;
+    if (activeLink) activeLink.classList.remove("is-active");
+    if (current) {
+      current.classList.add("is-active");
+      current.setAttribute("aria-current", "true");
+    }
+    if (activeLink) activeLink.removeAttribute("aria-current");
+    activeLink = current;
+
+    // On tablets and phones the links scroll sideways: keep the current one in view.
+    if (current && tocList.scrollWidth > tocList.clientWidth) {
+      var left = current.offsetLeft, right = left + current.offsetWidth;
+      if (left < tocList.scrollLeft || right > tocList.scrollLeft + tocList.clientWidth) {
+        tocList.scrollLeft = left - 24;
+      }
+    }
+  }
+
+  var ticking = false;
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(function () { ticking = false; updateActiveLink(); });
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+
+  /* ---------------- Desktop: keep the whole left column in view if it fits ---------------- */
+  var leftCol = document.querySelector(".side--left");
+  var profileCard = document.querySelector(".profile");
+  function updatePinned() {
+    if (!leftCol || !profileCard) return;
+    var desktop = window.matchMedia("(min-width: 1200px)").matches;
+    // Profile card + 16px gap + links, with 20px clear above and below.
+    var needed = profileCard.offsetHeight + 16 + toc.offsetHeight + 40;
+    leftCol.classList.toggle("is-pinned", desktop && needed <= window.innerHeight);
+  }
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(updatePinned);
+  window.addEventListener("resize", function () { updatePinned(); onScroll(); });
 
   /* ---------------- Open / closed status (India time) ---------------- */
   var SESSIONS = [[14 * 60, 17 * 60], [18 * 60, 20 * 60 + 30]]; // minutes since midnight
@@ -278,8 +337,6 @@
   }
 
   function updateStatus() {
-    var el = document.getElementById("openStatus");
-    if (!el) return;
     var now = indiaNow();
     var day = now.getDay();
     var mins = now.getHours() * 60 + now.getMinutes();
@@ -301,9 +358,11 @@
       if (next === 0) next = 1; // skip Sunday
       msg = t.opensTomorrow.replace("{d}", DAYS[lang][next]);
     }
-    el.textContent = msg;
-    el.classList.toggle("is-open", open);
-    el.classList.toggle("is-closed", !open);
+    document.querySelectorAll(".js-status").forEach(function (el) {
+      el.textContent = msg;
+      el.classList.toggle("is-open", open);
+      el.classList.toggle("is-closed", !open);
+    });
 
     // Highlight today's row in the hours table.
     document.querySelectorAll(".hours tr").forEach(function (row) {
@@ -405,20 +464,8 @@
     });
   }
 
-  /* ---------------- Floating call button (after the hero) ---------------- */
-  var fab = document.querySelector(".fab");
-  var hero = document.querySelector(".hero");
-  function onScroll() {
-    if (fab && hero) fab.classList.toggle("is-visible", window.scrollY > hero.offsetTop + hero.offsetHeight - 80);
-    // Back at the top: no section is current, so clear the menu highlight.
-    if (hero && window.scrollY < hero.offsetTop + hero.offsetHeight / 2) {
-      nav.querySelectorAll("a.is-active").forEach(function (a) { a.classList.remove("is-active"); });
-    }
-  }
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
-
   /* ---------------- Init ---------------- */
+  updateActiveLink();
   var yr = document.getElementById("year");
   if (yr) yr.textContent = String(new Date().getFullYear());
   applyProfileLinks();

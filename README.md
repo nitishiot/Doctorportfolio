@@ -5,12 +5,30 @@ consultant physician at Indira Nandan Niwas, Chaudharan Colony, Guna (M.P.).
 
 Plain HTML, CSS and JavaScript — no build step. English / Hindi toggle included.
 
+## Layout
+
+One long page in three columns:
+
+| Column | Job | Contents |
+|---|---|---|
+| Left (`.side--left`) | Who | Profile card (photo, name, degrees, registration, clinic) and "On this page" section links |
+| Centre (`#main`) | What | About, treatments, diabetes clinic, education, certificates & honours, reviews, gallery, FAQ |
+| Right (`#visit`) | How to reach | Call / WhatsApp booking card with open-now status, consultation hours, address, map, phone numbers, emergency note |
+
+| Screen width | Behaviour |
+|---|---|
+| 1200px and wider | Three columns. The right column stays in view (and scrolls on its own if taller than the window). The left column stays in view when the window is tall enough for all of it; otherwise the profile scrolls away and the section links stay. |
+| 900–1199px | Profile across the top, section links as a bar that sticks to the top, then content beside the right column |
+| Under 900px | One column: profile, section links bar, content, then the right column's cards. A Call / WhatsApp bar is fixed to the bottom of the screen |
+
+The centre panels use CSS container queries, so cards and grids adapt to the column's width rather than the screen's.
+
 ## Structure
 
 ```
 index.html              The whole site (one page, section anchors)
 assets/css/styles.css   Styles
-assets/js/main.js       Hindi translations, mobile menu, "open now" status, review rendering
+assets/js/main.js       Hindi translations, section-link highlighting, "open now" status, WhatsApp message, review rendering
 assets/js/reviews.js    Patient reviews (edit this file to add reviews)
 assets/img/             Clinic photos and certificate/award crops
 ```
@@ -34,8 +52,9 @@ with a content hash (`styles.css?v=…`) so visitors never get a new page with o
 | Add patient reviews | `assets/js/reviews.js` — paste reviews word for word from the Google profile; optional `translation` shows in the other language, labelled "Translated" |
 | Google rating badge | `REVIEW_SUMMARY` in `assets/js/reviews.js` (rating and review count as shown on Google) |
 | Google profile link | `GOOGLE_PROFILE_URL` in `assets/js/reviews.js` (used by the review and directions buttons) |
-| Doctor's photos     | Hero avatar: `assets/img/dr-sovran-rai-portrait.jpg` (square, shown as a circle). Link-preview and search image (`og:image`, JSON-LD): `assets/img/dr-sovran-rai-headshot.jpg`. When replacing a photo, use a new file name — `/assets/*` is cached for a day |
-| Change timings      | Hours table in `index.html` (`#visit`), `SESSIONS` in `assets/js/main.js`, top bar text, and the JSON-LD block |
+| Doctor's photos     | Profile photo (left column): `assets/img/dr-sovran-rai-portrait.jpg` (square, shown as a circle). Link-preview and search image (`og:image`, JSON-LD): `assets/img/dr-sovran-rai-headshot.jpg`. When replacing a photo, use a new file name — `/assets/*` is cached for a day |
+| Change timings      | Hours table in the right column of `index.html` (`#visit`), `SESSIONS` in `assets/js/main.js`, top bar text, the FAQ answer `faq.a2` (English in `index.html`, Hindi in `main.js`), and the JSON-LD block |
+| WhatsApp            | Number: `WHATSAPP_NUMBER` in `assets/js/main.js` and the two `data-wa` links in `index.html` (booking card and phone bar). Pre-filled message: `waText` in the `UI` object in `main.js` (English and Hindi) |
 | Hindi text          | `HI` object at the top of `assets/js/main.js` (keys match `data-i18n` attributes) |
 
 ## Deploy (Cloudflare Pages)
@@ -54,6 +73,8 @@ security headers. Custom domain, if one is bought later: the Pages project → C
 
 The site is currently live on GitHub Pages at https://nitishiot.github.io/Doctorportfolio/, built from
 `claude/doctor-website-static-wlh8vt`.
+The three-column layout is on `claude/inspiring-hopper-ei12z0`. To publish it, merge that branch into
+the one GitHub Pages builds from (or point Pages at it: Settings → Pages → Branch).
 
 ## Sources
 
@@ -81,5 +102,6 @@ Confirmed by the client, Nov 2026:
 
 Still to confirm with the doctor:
 
-- Phone numbers 97520 20327 (business card) and 94253 54374 (Mappls) are shown with a "To be confirmed" label. Once confirmed, delete the `<span class="tbc">` next to each number in `index.html` (two in the location section, two in the footer). 81097 70140 is confirmed by the clinic's signboards
+- WhatsApp: the Call / WhatsApp buttons use 81097 70140 for WhatsApp too. Confirm that number is on WhatsApp (ideally WhatsApp Business), or change it as described under "Common edits"
+- Phone numbers 97520 20327 (business card) and 94253 54374 (Mappls) are shown with a "To be confirmed" label. Once confirmed, delete the `<span class="tbc">` next to each number in `index.html` (two in the right column's contact list, two in the footer). 81097 70140 is confirmed by the clinic's signboards
 - MBBS college (a directory lists Index Medical College, Indore), MD college, and Junior Resident / Medical Officer posts — the client will send these
